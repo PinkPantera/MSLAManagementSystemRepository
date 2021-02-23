@@ -1,0 +1,15 @@
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.deps.json
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.dll
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.pdb
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.AssemblyInfoInputs.cache
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.AssemblyInfo.cs
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.dll
+D:\Udemy\MSLAManagement system\MSLAManagement system.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.pdb
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.deps.json
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.dll
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.pdb
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.csprojAssemblyReference.cache
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.AssemblyInfoInputs.cache
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.AssemblyInfo.cs
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.dll
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.MongoDB\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.MongoDB.pdb

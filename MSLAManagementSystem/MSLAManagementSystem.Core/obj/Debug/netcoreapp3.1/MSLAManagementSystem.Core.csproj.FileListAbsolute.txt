@@ -1,0 +1,15 @@
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.deps.json
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.dll
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.pdb
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.AssemblyInfoInputs.cache
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.AssemblyInfo.cs
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.dll
+D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.pdb
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.deps.json
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.dll
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Core.pdb
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.csprojAssemblyReference.cache
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.AssemblyInfoInputs.cache
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.AssemblyInfo.cs
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.dll
+D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Core\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Core.pdb

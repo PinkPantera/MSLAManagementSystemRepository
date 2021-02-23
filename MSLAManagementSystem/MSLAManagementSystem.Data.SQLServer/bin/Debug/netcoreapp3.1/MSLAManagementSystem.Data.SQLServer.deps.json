@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MSLAManagementSystem.Data.SQLServer/1.0.0": {
+        "runtime": {
+          "MSLAManagementSystem.Data.SQLServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MSLAManagementSystem.Data.SQLServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

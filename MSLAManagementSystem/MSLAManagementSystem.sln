@@ -1,0 +1,66 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scr", "Scr", "{072EC4A3-3628-4614-A638-1DA50A06841D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DE76A47E-7AC8-4BE9-892F-3A792ADB7F46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.API", "Web.API", "{15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.Client", "Web.Client", "{E895755F-7DE4-4C20-A80E-03466A5D3EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.API", "MSLAManagementSystem.API\MSLAManagementSystem.API.csproj", "{EA0E09E1-3552-403F-9409-4D8E36A1A08E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.Core", "MSLAManagementSystem.Core\MSLAManagementSystem.Core.csproj", "{485AA5F7-A61F-4F05-90CE-60E76D6EE061}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.Services", "MSLAManagementSystem.Services\MSLAManagementSystem.Services.csproj", "{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.Data.SQLServer", "MSLAManagementSystem.Data.SQLServer\MSLAManagementSystem.Data.SQLServer.csproj", "{FD500349-25DD-4F7B-BBBD-6029F847FBBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.Data.MongoDB", "MSLAManagementSystem.Data.MongoDB\MSLAManagementSystem.Data.MongoDB.csproj", "{E8C62B26-694E-4818-84D0-43474B4F23F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA0E09E1-3552-403F-9409-4D8E36A1A08E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0E09E1-3552-403F-9409-4D8E36A1A08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0E09E1-3552-403F-9409-4D8E36A1A08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0E09E1-3552-403F-9409-4D8E36A1A08E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485AA5F7-A61F-4F05-90CE-60E76D6EE061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485AA5F7-A61F-4F05-90CE-60E76D6EE061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485AA5F7-A61F-4F05-90CE-60E76D6EE061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485AA5F7-A61F-4F05-90CE-60E76D6EE061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD500349-25DD-4F7B-BBBD-6029F847FBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD500349-25DD-4F7B-BBBD-6029F847FBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD500349-25DD-4F7B-BBBD-6029F847FBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD500349-25DD-4F7B-BBBD-6029F847FBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C62B26-694E-4818-84D0-43474B4F23F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C62B26-694E-4818-84D0-43474B4F23F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C62B26-694E-4818-84D0-43474B4F23F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C62B26-694E-4818-84D0-43474B4F23F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1} = {072EC4A3-3628-4614-A638-1DA50A06841D}
+		{E895755F-7DE4-4C20-A80E-03466A5D3EA7} = {072EC4A3-3628-4614-A638-1DA50A06841D}
+		{EA0E09E1-3552-403F-9409-4D8E36A1A08E} = {15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}
+		{485AA5F7-A61F-4F05-90CE-60E76D6EE061} = {15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}
+		{0FD7DBA7-A5CB-4C89-90E6-53E6CE252F12} = {15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}
+		{FD500349-25DD-4F7B-BBBD-6029F847FBBE} = {15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}
+		{E8C62B26-694E-4818-84D0-43474B4F23F1} = {15ECFFFA-2D63-4AA2-A7F5-8638070B5CC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDF78DAB-AD21-4DD5-8808-FF343228AFAA}
+	EndGlobalSection
+EndGlobal

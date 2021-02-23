@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MSLAManagementSystem.Core/1.0.0": {
+        "runtime": {
+          "MSLAManagementSystem.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MSLAManagementSystem.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
