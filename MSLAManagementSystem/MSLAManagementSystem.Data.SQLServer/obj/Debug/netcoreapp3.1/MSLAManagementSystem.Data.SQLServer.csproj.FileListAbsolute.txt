@@ -1,7 +1,0 @@
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.deps.json
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.dll
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.pdb
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.AssemblyInfoInputs.cache
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.AssemblyInfo.cs
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.dll
-D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.pdb

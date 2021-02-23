@@ -1,5 +1,0 @@
-D:\Udemy\MSLAManagement system\MSLAManagement system.Core\bin\Debug\netcoreapp3.1\MSLAManagement system.Core.deps.json
-D:\Udemy\MSLAManagement system\MSLAManagement system.Core\bin\Debug\netcoreapp3.1\MSLAManagement system.Core.dll
-D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagement system.Core.csprojAssemblyReference.cache
-D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagement system.Core.AssemblyInfoInputs.cache
-D:\Udemy\MSLAManagement system\MSLAManagement system.Core\obj\Debug\netcoreapp3.1\MSLAManagement system.Core.AssemblyInfo.cs
