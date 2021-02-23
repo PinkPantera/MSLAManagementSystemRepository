@@ -13,6 +13,7 @@ namespace MSLAManagementSystem.Core.Models
         public string Region { get; set; }
         public string Country { get; set; }
         public string СityСode { get; set; }
+        public int ControlPostId { get; set; }
         public ControlPost ControlPost { get; set; }
     }
 }
