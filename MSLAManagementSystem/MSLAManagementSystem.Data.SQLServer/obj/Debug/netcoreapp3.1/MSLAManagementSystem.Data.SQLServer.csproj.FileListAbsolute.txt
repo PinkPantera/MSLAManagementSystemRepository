@@ -5,11 +5,3 @@ D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\ne
 D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.AssemblyInfo.cs
 D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.dll
 D:\Udemy\MSLAManagement system\MSLAManagement system.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.deps.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.csprojAssemblyReference.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.AssemblyInfoInputs.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.AssemblyInfo.cs
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Data.SQLServer\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Data.SQLServer.pdb

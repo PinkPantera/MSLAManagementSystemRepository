@@ -5,10 +5,3 @@ D:\Udemy\MSLAManagement system\MSLAManagement system.Services\obj\Debug\netcorea
 D:\Udemy\MSLAManagement system\MSLAManagement system.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.AssemblyInfo.cs
 D:\Udemy\MSLAManagement system\MSLAManagement system.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.dll
 D:\Udemy\MSLAManagement system\MSLAManagement system.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Services.deps.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Services.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\bin\Debug\netcoreapp3.1\MSLAManagementSystem.Services.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.AssemblyInfoInputs.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.AssemblyInfo.cs
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.Services\obj\Debug\netcoreapp3.1\MSLAManagementSystem.Services.pdb

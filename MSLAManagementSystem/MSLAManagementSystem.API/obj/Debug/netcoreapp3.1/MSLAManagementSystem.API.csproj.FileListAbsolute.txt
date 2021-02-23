@@ -15,21 +15,3 @@ D:\Udemy\MSLAManagement system\MSLAManagement system.API\obj\Debug\netcoreapp3.1
 D:\Udemy\MSLAManagement system\MSLAManagement system.API\obj\Debug\netcoreapp3.1\staticwebassets\MSLAManagementSystem.API.StaticWebAssets.xml
 D:\Udemy\MSLAManagement system\MSLAManagement system.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.dll
 D:\Udemy\MSLAManagement system\MSLAManagement system.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.exe
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.deps.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.runtimeconfig.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.runtimeconfig.dev.json
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\bin\Debug\netcoreapp3.1\MSLAManagementSystem.API.pdb
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.csprojAssemblyReference.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.MvcApplicationPartsAssemblyInfo.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.AssemblyInfoInputs.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.AssemblyInfo.cs
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.RazorTargetAssemblyInfo.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\staticwebassets\MSLAManagementSystem.API.StaticWebAssets.Manifest.cache
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\staticwebassets\MSLAManagementSystem.API.StaticWebAssets.xml
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.dll
-D:\Udemy\MSLAManagementSystemRepository\MSLAManagementSystem\MSLAManagementSystem.API\obj\Debug\netcoreapp3.1\MSLAManagementSystem.API.pdb
