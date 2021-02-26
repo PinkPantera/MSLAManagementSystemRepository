@@ -20,7 +20,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
 
             builder
                 .Property(m => m.ApartmentNumber)
-                .IsRequired()
                 .HasMaxLength(10);
 
             builder
@@ -35,7 +34,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
 
             builder
                 .Property(m => m.Region)
-                .IsRequired()
                 .HasMaxLength(50);
 
             builder
@@ -52,6 +50,10 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .Property(m => m.СityСode)
                 .IsRequired()
                 .HasMaxLength(10);
+
+            builder
+                .Property(m => m.CreatedDate)
+                .HasDefaultValueSql("GETDATE()");
 
             builder
                 .ToTable("Adresses");

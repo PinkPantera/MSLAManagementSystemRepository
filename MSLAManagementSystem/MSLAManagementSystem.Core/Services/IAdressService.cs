@@ -9,7 +9,7 @@ namespace MSLAManagementSystem.Core.Services
     public interface IAdressService
     {
         //TODO 
-        //needs to define the operations which our projet are required
+        //needs to define the operations which our project are required
 
         Task<IEnumerable<Adress>> GetAllAdresses();
         Task<Adress> GetAdressById(int id);

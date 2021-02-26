@@ -30,15 +30,21 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .IsRequired();
 
             builder
+                .Property(m => m.CreatedDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder
                 .HasOne(m => m.Person)
                 .WithMany(a => a.AttendanceLogs)
-                .HasForeignKey(m => m.PersonId);
+                .HasForeignKey(m => m.PersonId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
                 .HasOne(m => m.ControlPost)
                 .WithMany(a => a.AttendanceLogs)
-                .HasForeignKey(m => m.ControlPostId);
- 
+                .HasForeignKey(m => m.ControlPostId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder
                 .ToTable("AttendanceLogs");
         }

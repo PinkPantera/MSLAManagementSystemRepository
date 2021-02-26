@@ -23,10 +23,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .HasMaxLength(50);
 
             builder
-                 .HasOne(m => m.Adress)
-                 .WithOne(a => a.ControlPost)
-                 .HasForeignKey<Adress>(t => t.ControlPostId);
- 
+                .Property(m => m.CreatedDate)
+                .HasDefaultValueSql("GETDATE()");
+
             builder
                 .ToTable("ControlPosts");
         }

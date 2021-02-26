@@ -28,11 +28,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                .HasMaxLength(50);
 
             builder
-               .HasOne(m => m.Adress)
-               .WithMany(a => a.Persons)
-               .HasForeignKey(m => m.AdressId);
-
-            builder
                 .Property(m => m.Age)
                 .IsRequired();
            
@@ -44,6 +39,10 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .Property(m => m.Phone)
                 .IsRequired()
                 .HasMaxLength(20);
+
+            builder
+                .Property(m => m.CreatedDate)
+                .HasDefaultValueSql("GETDATE()");
 
             builder
                 .ToTable("Persons");

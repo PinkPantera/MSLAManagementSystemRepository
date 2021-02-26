@@ -7,5 +7,6 @@ namespace MSLAManagementSystem.Core.Models
     public abstract class BasicModel
     {
         public int Id { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

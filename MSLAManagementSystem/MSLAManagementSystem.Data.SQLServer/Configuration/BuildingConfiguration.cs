@@ -23,39 +23,14 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .HasMaxLength(50);
 
             builder
-                 .Property(m => m.Number)
-                 .IsRequired()
-                 .HasMaxLength(10);
-
-            builder
-                .Property(m => m.Street)
-                .IsRequired()
-                .HasMaxLength(40);
-
-            builder
-                .Property(m => m.Region)
-                .IsRequired()
-                .HasMaxLength(50);
-
-            builder
-                .Property(m => m.Town)
-                .IsRequired()
-                .HasMaxLength(40);
-
-            builder
-                .Property(m => m.Country)
-                .IsRequired()
-                .HasMaxLength(40);
-
-            builder
-                .Property(m => m.СityСode)
-                .IsRequired()
-                .HasMaxLength(10);
+                .Property(m => m.CreatedDate)
+                .HasDefaultValueSql("GETDATE()");
 
             builder
                 .HasOne(m => m.ControlPost)
                 .WithMany(a => a.Buildings)
-                .HasForeignKey(m => m.ControlPostId);
+                .HasForeignKey(m => m.ControlPostId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder
                 .ToTable("Buildings");

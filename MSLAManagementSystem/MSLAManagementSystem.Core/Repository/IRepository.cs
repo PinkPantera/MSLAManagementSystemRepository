@@ -9,7 +9,7 @@ namespace MSLAManagementSystem.Core.Repository
     public interface IRepository<TEntity> where TEntity:class
     {
         ValueTask<TEntity> GetByIdAsync(int id);
-        Task<TEntity> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllAsync();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> SinglOrDefaulAsync(Expression<Func<TEntity, bool>> predicate);
         Task AddAsync(TEntity entity);
