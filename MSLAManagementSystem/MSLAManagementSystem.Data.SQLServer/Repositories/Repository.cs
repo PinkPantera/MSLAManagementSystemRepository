@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MSLAManagementSystem.Core.Models;
 using MSLAManagementSystem.Core.Repository;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Data.SQLServer.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BasicModel
     {
         protected readonly DbContext context;
 
@@ -17,7 +18,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
         {
             this.context = context;
         }
-
 
         public async Task AddAsync(TEntity entity)
         {

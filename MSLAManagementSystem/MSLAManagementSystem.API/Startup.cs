@@ -11,8 +11,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using MSLAManagementSystem.Core;
+using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Repository;
+using MSLAManagementSystem.Core.Services;
 using MSLAManagementSystem.Data.SQLServer;
+using MSLAManagementSystem.Data.SQLServer.Repositories;
+using MSLAManagementSystem.Services.Services;
 
 namespace MSLAManagementSystem.API
 {
@@ -35,7 +41,17 @@ namespace MSLAManagementSystem.API
                 (
                     Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly("MSLAManagementSystem.Data.SQLServer")
                  ));
+
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IAdressService, AdressService>();
+            services.AddTransient<IPersonService, PersonService>();
+
+            //swagger
+            services.AddSwaggerGen(c=>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Title", Description = "Description" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +71,13 @@ namespace MSLAManagementSystem.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c=>
+            {
+                c.RoutePrefix = "";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MSLAManagementSystem v1");
             });
         }
     }

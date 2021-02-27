@@ -1,4 +1,5 @@
-﻿using MSLAManagementSystem.Core.Repository;
+﻿using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,11 +9,13 @@ namespace MSLAManagementSystem.Core
 {
    public interface IUnitOfWork: IDisposable
     {
-        IPersonRepository Persons { get; }
-        IAdressRepository Adresses { get; }
-        IBuildingRepository Buildings { get; }
-        IControlPostRepository ControlPosts { get; }
-        IAttendanceLogRepository AttendanceLogs { get; }
+        //IPersonRepository Persons { get; }
+        //IAdressRepository Adresses { get; }
+        //IBuildingRepository Buildings { get; }
+        //IControlPostRepository ControlPosts { get; }
+        //IAttendanceLogRepository AttendanceLogs { get; }
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : BasicModel;
+
 
         Task<int> CommitAsync();
     }

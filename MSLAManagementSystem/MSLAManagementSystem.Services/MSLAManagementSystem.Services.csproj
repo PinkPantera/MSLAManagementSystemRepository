@@ -5,4 +5,8 @@
     <RootNamespace>MSLAManagementSystem.Services</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MSLAManagementSystem.Core\MSLAManagementSystem.Core.csproj" />
+  </ItemGroup>
+
 </Project>

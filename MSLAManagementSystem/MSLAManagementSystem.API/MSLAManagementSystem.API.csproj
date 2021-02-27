@@ -14,10 +14,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MSLAManagementSystem.Data.SQLServer\MSLAManagementSystem.Data.SQLServer.csproj" />
+    <ProjectReference Include="..\MSLAManagementSystem.Services\MSLAManagementSystem.Services.csproj" />
   </ItemGroup>
 
 

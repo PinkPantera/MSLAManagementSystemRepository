@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Services
 {
-    public interface IAttendanceLogService
+    public interface IAttendanceLogService:IEntityService<AttendanceLog>
     {
         //TODO 
         //needs to define the operations which our projet are required
 
-        Task<IEnumerable<AttendanceLog>> GetAllAttendanceLogs();
-        Task<AttendanceLog> GetAttendanceLogById(int id);
-        Task<AttendanceLog> CreatAttendanceLog(AttendanceLog attendanceLog);
-        Task<AttendanceLog> UpadteAttendanceLog(AttendanceLog attendanceLog);
-        Task DeleteAttendanceLog(AttendanceLog attendanceLog);
+        //Task<IEnumerable<AttendanceLog>> GetAllAttendanceLogs();
+        //Task<AttendanceLog> GetAttendanceLogById(int id);
+        //Task<AttendanceLog> CreatAttendanceLog(AttendanceLog attendanceLog);
+        //Task<AttendanceLog> UpadteAttendanceLog(AttendanceLog attendanceLog);
+        //Task DeleteAttendanceLog(AttendanceLog attendanceLog);
     }
 }

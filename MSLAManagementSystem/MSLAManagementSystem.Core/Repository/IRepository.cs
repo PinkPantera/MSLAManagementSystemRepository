@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MSLAManagementSystem.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Repository
 {
-    public interface IRepository<TEntity> where TEntity:class
+    public interface IRepository<TEntity> where TEntity : BasicModel
     {
         ValueTask<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
