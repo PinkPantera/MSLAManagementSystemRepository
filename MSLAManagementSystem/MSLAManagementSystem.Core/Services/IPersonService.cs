@@ -11,7 +11,7 @@ namespace MSLAManagementSystem.Core.Services
         //TODO 
         //needs to define the operations which our projet are required
 
-        //Task<IEnumerable<Person>> GetAllPerson();
+        Task<IEnumerable<Person>> GetAllWithAdress();
         //Task<Person> GetPersonById(int id);
         //Task<Person> CreatPerson(Person person);
         //Task<Person> UpadtePerson(Person person);

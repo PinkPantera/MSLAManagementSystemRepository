@@ -1,5 +1,6 @@
 ﻿using MSLAManagementSystem.Core;
 using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace MSLAManagementSystem.Services.Services
         public PersonService(IUnitOfWork unitOFWork)
             : base(unitOFWork)
         {
+        }
+
+        public async Task<IEnumerable<Person>> GetAllWithAdress()
+        {
+          return await ((IPersonRepository)unitOfWork.GetRepository<Person>()).GetAllWithAdressAsync();
         }
 
         public override async Task Update(Person entity)

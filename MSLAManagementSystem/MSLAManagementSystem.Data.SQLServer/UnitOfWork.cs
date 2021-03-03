@@ -47,7 +47,16 @@ namespace MSLAManagementSystem.Data.SQLServer
 
             if (!repositories.ContainsKey(type))
             {
-                var repository = new Repository<TEntity>(context);
+                IRepository<TEntity> repository = null;
+                if (type == typeof(Person))
+                {
+                    repository = (IRepository<TEntity>)new PersonRepository(context);
+                }
+                else
+                {
+                    repository = new Repository<TEntity>(context);
+                }
+
                 repositories.Add(typeof(TEntity), repository);
             }
 
