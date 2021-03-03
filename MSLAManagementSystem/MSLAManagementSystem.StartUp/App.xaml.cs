@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace MSLAManagementSystem.StartUp
 {
@@ -37,6 +39,16 @@ namespace MSLAManagementSystem.StartUp
 
             if (created)
             {
+
+                CultureInfo info = new CultureInfo("en-US");
+                Thread.CurrentThread.CurrentCulture = info;
+                Thread.CurrentThread.CurrentUICulture = info;
+
+                FrameworkElement.LanguageProperty.OverrideMetadata(
+                    typeof(FrameworkElement),
+                    new FrameworkPropertyMetadata(
+                          XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+
                 UIService = IoC.Container.Resolve<IUIService>();
                 UIService.Initialize();
 

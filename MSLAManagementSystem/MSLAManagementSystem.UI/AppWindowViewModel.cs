@@ -11,7 +11,7 @@ namespace MSLAManagementSystem.UI
 
         public AppWindowViewModel()
         {
-            WindowTitle = "Test";
+            WindowTitle = Resource.WindowTitle;
         }
 
         public string WindowTitle
