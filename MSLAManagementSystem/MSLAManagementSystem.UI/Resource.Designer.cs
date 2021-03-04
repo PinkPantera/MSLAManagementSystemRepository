@@ -61,6 +61,96 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adresses.
+        /// </summary>
+        public static string AdressesPageTitle {
+            get {
+                return ResourceManager.GetString("AdressesPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attendance log.
+        /// </summary>
+        public static string AttendanceLogPageTitle {
+            get {
+                return ResourceManager.GetString("AttendanceLogPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logements.
+        /// </summary>
+        public static string BuildingsPageTitle {
+            get {
+                return ResourceManager.GetString("BuildingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardian housing.
+        /// </summary>
+        public static string ControlPostsPageTitle {
+            get {
+                return ResourceManager.GetString("ControlPostsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Day.
+        /// </summary>
+        public static string CurrentDayPageTitle {
+            get {
+                return ResourceManager.GetString("CurrentDayPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to not signed in.
+        /// </summary>
+        public static string NotSignedIn {
+            get {
+                return ResourceManager.GetString("NotSignedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Persons.
+        /// </summary>
+        public static string PersonsPageTitle {
+            get {
+                return ResourceManager.GetString("PersonsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planning.
+        /// </summary>
+        public static string PlanningPageTitle {
+            get {
+                return ResourceManager.GetString("PlanningPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsPageTitle {
+            get {
+                return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Management System.
         /// </summary>
         public static string WindowTitle {

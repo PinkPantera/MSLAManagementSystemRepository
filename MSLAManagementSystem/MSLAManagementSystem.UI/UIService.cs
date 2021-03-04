@@ -20,7 +20,7 @@ namespace MSLAManagementSystem.UI
 
         public void Initialize()
         {
-            appWindowViewModel = new AppWindowViewModel();
+            appWindowViewModel = IoC.Container.Resolve<AppWindowViewModel>();
         }
 
         public void ShowError(Exception e)

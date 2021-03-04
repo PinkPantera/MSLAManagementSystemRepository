@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MSLAManagementSystem.UI.Interfaces
 {
-    internal interface ICloseable
+    public interface ICloseable
     {
         Action CloseWindow { get; set; }
         bool CanClose();

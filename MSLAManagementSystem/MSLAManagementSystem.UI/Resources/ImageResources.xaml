@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="SettingsIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/settings.png"/>
+    <BitmapImage x:Key="ApplicationExitIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/applicationexit.png"/>
+    <BitmapImage x:Key="AdresseIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/adresse.png"/>
+    <BitmapImage x:Key="PersonsIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/persons.png"/>
+    <BitmapImage x:Key="BuildingsIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/buildings.png"/>
+    <BitmapImage x:Key="ControlPostIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/controlPost.png"/>
+    <BitmapImage x:Key="AttendanceLogIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/attendanceLog.png"/>
+    <BitmapImage x:Key="TodayIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/today.png"/>
+    <BitmapImage x:Key="PlanningIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/planning.png"/>
+
+</ResourceDictionary>

@@ -3,16 +3,114 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MSLAManagementSystem.UI"
         xmlns:ex="clr-namespace:MSLAManagementSystem.UI.DependencyProperties"
+        xmlns:customControls="clr-namespace:MSLAManagementSystem.UI.CustomControls"
+        xmlns:enums ="clr-namespace:MSLAManagementSystem.UI.Common"
+        xmlns:resx="clr-namespace:MSLAManagementSystem.UI"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Height="550"
-        Width="800"
+        Width="1000"
         ResizeMode="NoResize"
         Title="{Binding WindowTitle}"
         ex:WindowProperties.EnableWindowClosing="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/ImageResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MSLAManagementSystem.UI;component/Style/MSLAManagementSystemStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" MinWidth="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource Frame}" Margin="5">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}" Margin="0 0 5 0"
+                                               Content="{x:Static resx:Resource.CurrentDayPageTitle}"
+                                                IconSource="{DynamicResource TodayIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Main}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
+                                               Content="{x:Static resx:Resource.PersonsPageTitle}"
+                                               IconSource="{DynamicResource PersonsIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Person}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
+                                               Content="{x:Static resx:Resource.AdressesPageTitle}"
+                                               IconSource="{DynamicResource AdresseIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Adress}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
+                                               Content="{x:Static resx:Resource.BuildingsPageTitle}"
+                                               IconSource="{DynamicResource BuildingsIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Building}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
+                                               Content="{x:Static resx:Resource.ControlPostsPageTitle}"
+                                               IconSource="{DynamicResource ControlPostIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.ControlPost}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 10 0"
+                                               Content="{x:Static resx:Resource.AttendanceLogPageTitle}"
+                                                IconSource="{DynamicResource AttendanceLogIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.AttendanceLog}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 10 0"
+                                               Content="{x:Static resx:Resource.PlanningPageTitle}"
+                                               IconSource="{DynamicResource PlanningIcon}"
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Planning}"/>
+            </StackPanel>
+        </Border>
+
+        <Border  Grid.Row="0" Grid.Column="1" Style="{StaticResource Frame}" Margin="5" Padding="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock  Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource TextBlockUserName}"
+                            VerticalAlignment="Center" HorizontalAlignment="Left" TextTrimming="WordEllipsis"
+                            Text="{x:Static resx:Resource.NotSignedIn}"/>
+
+                <customControls:IconTextButton Grid.Row="0" Grid.Column="1" 
+                                               Style="{StaticResource ButtonMenuGray}" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                               IconVisibility="Collapsed"
+                                               Content="Log in"
+                                               Command="{Binding MenuCommand}"/>
+
+                <StackPanel Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" 
+                            Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+
+                    <customControls:IconTextButton Style="{StaticResource ButtonMenuGray}"  Margin="0 10 10 0"
+                                                   IconSource="{DynamicResource SettingsIcon}"  IconHeight="20"
+                                                   TextVisibility="Collapsed"
+                                                   ToolTip="{x:Static resx:Resource.SettingsPageTitle}"
+                                                   Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Settings}"/>
+
+                    <customControls:IconTextButton Style="{StaticResource ButtonMenuGray}" HorizontalAlignment="Right" VerticalAlignment="Bottom"  
+                                                   IconSource="{DynamicResource ApplicationExitIcon}" IconHeight="20"
+                                                   TextVisibility="Collapsed"
+                                                   ToolTip="{x:Static resx:Resource.Exit}"
+                                                   Command="{Binding ExitCommand}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!--Content-->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Frame}" Margin="5">
+                <ContentControl Margin=" 10 0 5 20" VerticalAlignment="Top"
+                        Content="{Binding SelectedPage}" Focusable="False" />
+        </Border>
     </Grid>
 </Window>

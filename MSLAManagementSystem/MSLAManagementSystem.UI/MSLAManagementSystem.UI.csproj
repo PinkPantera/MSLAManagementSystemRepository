@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\adresse.png" />
+    <None Remove="Resources\Images\applicationexit.png" />
+    <None Remove="Resources\Images\attendanceLog.png" />
+    <None Remove="Resources\Images\buildings.png" />
+    <None Remove="Resources\Images\controlPost.png" />
+    <None Remove="Resources\Images\persons.png" />
+    <None Remove="Resources\Images\planning.png" />
+    <None Remove="Resources\Images\settings.png" />
+    <None Remove="Resources\Images\today.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MSLAManagementSystem.InversionOfControl\MSLAManagementSystem.InversionOfControl.csproj" />
   </ItemGroup>
 
@@ -28,6 +40,36 @@
     <EmbeddedResource Update="Resource.ru-RU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\adresse.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\applicationexit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\attendanceLog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\buildings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\controlPost.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\persons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\planning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\today.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

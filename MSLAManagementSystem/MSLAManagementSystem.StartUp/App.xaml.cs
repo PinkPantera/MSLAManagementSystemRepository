@@ -39,7 +39,6 @@ namespace MSLAManagementSystem.StartUp
 
             if (created)
             {
-
                 CultureInfo info = new CultureInfo("en-US");
                 Thread.CurrentThread.CurrentCulture = info;
                 Thread.CurrentThread.CurrentUICulture = info;
