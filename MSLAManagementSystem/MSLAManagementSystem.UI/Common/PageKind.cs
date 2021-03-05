@@ -9,11 +9,11 @@ namespace MSLAManagementSystem.UI.Common
         Unknown,
 
         Main,
-        Person,
-        Adress,
-        Building,
-        ControlPost,
-        AttendanceLog,
+        Persons,
+        Adresses,
+        Buildings,
+        ControlPosts,
+        AttendanceLogs,
         Settings,
         Planning
     }

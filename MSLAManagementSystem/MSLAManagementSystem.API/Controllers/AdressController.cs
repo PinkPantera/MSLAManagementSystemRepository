@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,18 @@ namespace MSLAManagementSystem.API.Controllers
     [ApiController]
     public class AdressController : ControllerBase
     {
+        public IAdressService adressService;
+        public AdressController(IAdressService adressService)
+        {
+            this.adressService = adressService;
+        }
+
+
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<AdressEntity>>> GetAllAdresses()
+        {
+            var persons = await adressService.GetAll();
+            return Ok(persons);
+        }
     }
 }

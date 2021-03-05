@@ -6,5 +6,11 @@
     <DataTemplate DataType="{x:Type viewModels:MainPageViewModel}">
         <views:MainPageView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:PersonsPageViewModel}">
+        <views:PersonsPageView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:AdressesPageViewModel}">
+        <views:AdressesPageView />
+    </DataTemplate>
 
 </ResourceDictionary>

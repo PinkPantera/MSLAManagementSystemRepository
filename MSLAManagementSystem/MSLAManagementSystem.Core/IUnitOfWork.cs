@@ -14,7 +14,7 @@ namespace MSLAManagementSystem.Core
         //IBuildingRepository Buildings { get; }
         //IControlPostRepository ControlPosts { get; }
         //IAttendanceLogRepository AttendanceLogs { get; }
-        IRepository<TEntity> GetRepository<TEntity>() where TEntity : BasicModel;
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
 
 
         Task<int> CommitAsync();

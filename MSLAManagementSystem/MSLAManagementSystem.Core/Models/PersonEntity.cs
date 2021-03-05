@@ -1,24 +1,25 @@
-﻿using System;
+﻿using MSLAManagementSystem.Core.ModelsInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MSLAManagementSystem.Core.Models
 {
-    public class Person: BasicModel
+    public class PersonEntity: BasicEntity, IPerson
     {
-        public Person()
+        public PersonEntity()
         {
-            AttendanceLogs = new Collection<AttendanceLog>();
+            AttendanceLogs = new Collection<AttendanceLogEntity>();
         }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
-        public int Age { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string IdentityCard { get; set; }
         public int? AdressId { get; set; }
-        public Adress Adress { get; set; }
+        public AdressEntity Adress { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public ICollection<AttendanceLog> AttendanceLogs { get; set; } 
+        public ICollection<AttendanceLogEntity> AttendanceLogs { get; set; } 
     }
 }

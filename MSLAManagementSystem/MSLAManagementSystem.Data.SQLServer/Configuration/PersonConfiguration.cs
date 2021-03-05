@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Configuration
 {
-    public class PersonConfiguration : IEntityTypeConfiguration<Person>
+    public class PersonConfiguration : IEntityTypeConfiguration<PersonEntity>
     {
-        public void Configure(EntityTypeBuilder<Person> builder)
+        public void Configure(EntityTypeBuilder<PersonEntity> builder)
         {
             builder.HasKey(m => m.Id);
 
@@ -28,7 +28,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                .HasMaxLength(50);
 
             builder
-                .Property(m => m.Age)
+                .Property(m => m.DateOfBirth)
                 .IsRequired();
            
             builder

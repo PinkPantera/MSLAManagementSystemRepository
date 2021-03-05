@@ -1,6 +1,7 @@
 ﻿using MSLAManagementSystem.UI.Common;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MSLAManagementSystem.UI.Extensions
@@ -15,6 +16,11 @@ namespace MSLAManagementSystem.UI.Extensions
             return (Enum.TryParse(value, out result) && Array.BinarySearch(pageKindValuesSet, (int)result) >= 0)
                 ? result
                 : PageKind.Unknown;
+        }
+
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> col)
+        {
+            return new ObservableCollection<T>(col);
         }
     }
 }

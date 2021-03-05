@@ -1,5 +1,6 @@
 ﻿using MSLAManagementSystem.Core;
 using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Core.Services;
 using System;
@@ -9,22 +10,48 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Services.Services
 {
-    public class PersonService : EntityService<Person>, IPersonService
+    public class PersonService : IPersonService
     {
-        public PersonService(IUnitOfWork unitOFWork)
-            : base(unitOFWork)
+        private readonly IUnitOfWork unitOfWork;
+
+        public PersonService(IUnitOfWork unitOfWork)
         {
+            this.unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<Person>> GetAllWithAdress()
+        public async Task<PersonEntity> Create(PersonEntity entity)
         {
-          return await ((IPersonRepository)unitOfWork.GetRepository<Person>()).GetAllWithAdressAsync();
+            await unitOfWork.GetRepository<PersonEntity>().AddAsync(entity);
+            await unitOfWork.CommitAsync();
+
+            return entity;
         }
 
-        public override async Task Update(Person entity)
+        public async Task Delete(PersonEntity entity)
+        {
+            unitOfWork.GetRepository<PersonEntity>().Remove(entity);
+            await unitOfWork.CommitAsync();
+        }
+
+        public async Task<IEnumerable<PersonEntity>> GetAll()
+        {
+            return await unitOfWork.GetRepository<PersonEntity>().GetAllAsync();
+        }
+
+        public async Task<PersonEntity> GetById(int id)
+        {
+            return await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(id);
+        }
+
+        public async Task<IEnumerable<PersonEntity>> GetAllWithAdressAsync()
+        {
+          return await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>()).GetAllWithAdressAsync();
+        }
+
+        public  async Task Update(PersonEntity entity)
         {
             //TODO need add logic to update
-            var entityToUpdate = await unitOfWork.GetRepository<Person>().GetByIdAsync(entity.Id);
+            var entityToUpdate = await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(entity.Id);
 
             entityToUpdate.FirstName = entity.FirstName;
 

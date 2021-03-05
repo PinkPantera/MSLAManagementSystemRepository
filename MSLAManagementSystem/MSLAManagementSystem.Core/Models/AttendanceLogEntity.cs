@@ -4,14 +4,14 @@ using System.Text;
 
 namespace MSLAManagementSystem.Core.Models
 {
-    public class AttendanceLog : BasicModel
+    public class AttendanceLogEntity : BasicEntity
     {
         public DateTime Date { get; set; }
         public int TimeBegin { get; set; }
         public int TimeEnd { get; set; }
         public int PersonId { get; set; }
-        public Person Person { get; set; }
+        public PersonEntity Person { get; set; }
         public int? ControlPostId { get; set; }
-        public ControlPost ControlPost { get; set; }
+        public ControlPostEntity ControlPost { get; set; }
     }
 }

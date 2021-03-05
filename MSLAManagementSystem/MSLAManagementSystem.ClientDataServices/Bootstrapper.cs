@@ -1,18 +1,18 @@
 ﻿using MSLAManagementSystem.ClientDataServices.Interfaces;
+using MSLAManagementSystem.ClientDataServices.ServicesClient;
 using MSLAManagementSystem.InversionOfControl;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MSLAManagementSystem.StartUp
+namespace MSLAManagementSystem.ClientDataServices
 {
     public static class Bootstrapper
     {
         public static void Initialize(DependencyContainer container)
         {
-            container.Register<ISettings, Settings>(Lifetime.Singleton);
-            ClientDataServices.Bootstrapper.Initialize(container);
-            UI.Bootstrapper.Initialize(container);
+            container.Register<IAdressServiceClient, AdressServiceClient>(Lifetime.Singleton);
+            container.Register<IPersonServiceClient, PersonServiceClient>(Lifetime.Singleton);
         }
     }
 }

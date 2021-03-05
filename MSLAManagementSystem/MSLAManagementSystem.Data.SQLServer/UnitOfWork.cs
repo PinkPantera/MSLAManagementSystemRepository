@@ -1,5 +1,6 @@
 ﻿using MSLAManagementSystem.Core;
 using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Data.SQLServer.Repositories;
 using System;
@@ -41,16 +42,17 @@ namespace MSLAManagementSystem.Data.SQLServer
             return await context.SaveChangesAsync();
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BasicModel
+        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class 
         {
             var type = typeof(TEntity);
 
             if (!repositories.ContainsKey(type))
             {
                 IRepository<TEntity> repository = null;
-                if (type == typeof(Person))
+                if (type == typeof(PersonEntity))
                 {
-                    repository = (IRepository<TEntity>)new PersonRepository(context);
+                    var tmp = new PersonRepository(context);
+                    repository = (IRepository<TEntity>)tmp;
                 }
                 else
                 {

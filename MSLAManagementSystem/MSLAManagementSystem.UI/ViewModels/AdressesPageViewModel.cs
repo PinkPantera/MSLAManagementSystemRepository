@@ -6,13 +6,13 @@ using System.Text;
 
 namespace MSLAManagementSystem.UI.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase,IPage
+    public class AdressesPageViewModel : ViewModelBase,IPage
     {
-        public PageKind PageKind => PageKind.Main;
+        public PageKind PageKind => PageKind.Adresses;
 
-        public string Caption => Resource.CurrentDayPageTitle;
+        public string Caption => Resource.AdressesPageTitle;
 
-        public Action CloseWindow { get ; set; }
+        public Action CloseWindow { get; set; }
 
         public bool CanClose()
         {

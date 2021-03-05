@@ -43,23 +43,23 @@
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
                                                Content="{x:Static resx:Resource.PersonsPageTitle}"
                                                IconSource="{DynamicResource PersonsIcon}"
-                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Person}"/>
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Persons}"/>
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
                                                Content="{x:Static resx:Resource.AdressesPageTitle}"
                                                IconSource="{DynamicResource AdresseIcon}"
-                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Adress}"/>
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Adresses}"/>
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
                                                Content="{x:Static resx:Resource.BuildingsPageTitle}"
                                                IconSource="{DynamicResource BuildingsIcon}"
-                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Building}"/>
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.Buildings}"/>
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 5 0"
                                                Content="{x:Static resx:Resource.ControlPostsPageTitle}"
                                                IconSource="{DynamicResource ControlPostIcon}"
-                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.ControlPost}"/>
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.ControlPosts}"/>
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 10 0"
                                                Content="{x:Static resx:Resource.AttendanceLogPageTitle}"
                                                 IconSource="{DynamicResource AttendanceLogIcon}"
-                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.AttendanceLog}"/>
+                                               Command="{Binding MenuCommand}" CommandParameter="{x:Static enums:PageKind.AttendanceLogs}"/>
                 <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 0 10 0"
                                                Content="{x:Static resx:Resource.PlanningPageTitle}"
                                                IconSource="{DynamicResource PlanningIcon}"

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MSLAManagementSystem.Core.ModelsInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MSLAManagementSystem.Core.Models
 {
-    public class Adress: BasicModel
+    public class AdressEntity: BasicEntity, IAdress
     {
         public string Street { get; set; }
         public string HouseNumber  { get; set; }

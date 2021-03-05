@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Services
 {
-   public interface IBuildingService:IEntityService<Building>
+   public interface IBuildingService:IEntityService<BuildingEntity>
     {
         //TODO 
         //needs to define the operations which our projet are required

@@ -9,11 +9,11 @@ namespace MSLAManagementSystem.Data.SQLServer
 {
     public class ManagementSystemDbContext: DbContext
     {
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Adress> Adresses { get; set; }
-        public DbSet<Building> Buildings { get; set; }
-        public DbSet<ControlPost> ControlPosts { get; set; }
-        public DbSet<AttendanceLog> AttendanceLogs { get; set; }
+        public DbSet<PersonEntity> Persons { get; set; }
+        public DbSet<AdressEntity> Adresses { get; set; }
+        public DbSet<BuildingEntity> Buildings { get; set; }
+        public DbSet<ControlPostEntity> ControlPosts { get; set; }
+        public DbSet<AttendanceLogEntity> AttendanceLogs { get; set; }
 
         public ManagementSystemDbContext(DbContextOptions<ManagementSystemDbContext> options)
             :base (options)

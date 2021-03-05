@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Repository
 {
-    public interface IRepository<TEntity> where TEntity : BasicModel
+    public interface IRepository<TEntity> where TEntity : class
     {
         ValueTask<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();

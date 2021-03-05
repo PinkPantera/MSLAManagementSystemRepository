@@ -21,9 +21,9 @@ namespace MSLAManagementSystem.API.Controllers
         }
 
         [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<Person>>> GetAllPersons()
+        public async Task<ActionResult<IEnumerable<PersonEntity>>> GetAllPersons()
         {
-            var persons = await personService.GetAllWithAdress();
+            var persons = await personService.GetAllWithAdressAsync();
             return Ok(persons);
         }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Services.Services
 {
-    public abstract class EntityService<TEntity> : IEntityService<TEntity> where TEntity : BasicModel
+    public abstract class EntityService<TEntity> : IEntityService<TEntity> where TEntity : class
     {
         protected readonly IUnitOfWork unitOfWork;
 

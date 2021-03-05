@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Data.SQLServer.Repositories
 {
-    public class PersonRepository : Repository<Person>, IPersonRepository
+    public class PersonRepository : Repository<PersonEntity>, IPersonRepository
     {
         private ManagementSystemDbContext managementSystemDbContext
         {
@@ -22,7 +23,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
         {
 
         }
-        public async Task<IEnumerable<Person>> GetAllWithAdressAsync()
+        public async Task<IEnumerable<PersonEntity>> GetAllWithAdressAsync()
         {
             return await managementSystemDbContext.Persons
                 .Include(p => p.Adress)

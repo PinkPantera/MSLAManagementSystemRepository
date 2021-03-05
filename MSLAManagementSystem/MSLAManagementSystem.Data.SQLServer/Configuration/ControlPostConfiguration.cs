@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Configuration
 {
-    public class ControlPostConfiguration : IEntityTypeConfiguration<ControlPost>
+    public class ControlPostConfiguration : IEntityTypeConfiguration<ControlPostEntity>
     {
-        public void Configure(EntityTypeBuilder<ControlPost> builder)
+        public void Configure(EntityTypeBuilder<ControlPostEntity> builder)
         {
             builder.HasKey(m => m.Id);
 

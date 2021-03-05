@@ -43,4 +43,25 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Arial Nova Light"/>
     </Style>
+
+    <DataTemplate x:Key="PersonControlTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding FirstName}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SecondName}"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Phone}"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Email}"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="{Binding IdentityCard}"/>
+        </Grid>
+    </DataTemplate>
 </ResourceDictionary>

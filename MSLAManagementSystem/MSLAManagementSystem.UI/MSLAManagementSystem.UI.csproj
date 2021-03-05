@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MSLAManagementSystem.ClientDataServices\MSLAManagementSystem.ClientDataServices.csproj" />
+    <ProjectReference Include="..\MSLAManagementSystem.Core\MSLAManagementSystem.Core.csproj" />
     <ProjectReference Include="..\MSLAManagementSystem.InversionOfControl\MSLAManagementSystem.InversionOfControl.csproj" />
   </ItemGroup>
 

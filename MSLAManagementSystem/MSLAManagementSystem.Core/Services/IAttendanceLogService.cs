@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Services
 {
-    public interface IAttendanceLogService:IEntityService<AttendanceLog>
+    public interface IAttendanceLogService:IEntityService<AttendanceLogEntity>
     {
         //TODO 
         //needs to define the operations which our projet are required

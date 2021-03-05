@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Configuration
 {
-    public class BuildingConfiguration : IEntityTypeConfiguration<Building>
+    public class BuildingConfiguration : IEntityTypeConfiguration<BuildingEntity>
     {
-        public void Configure(EntityTypeBuilder<Building> builder)
+        public void Configure(EntityTypeBuilder<BuildingEntity> builder)
         {
             builder.HasKey(m => m.Id);
 

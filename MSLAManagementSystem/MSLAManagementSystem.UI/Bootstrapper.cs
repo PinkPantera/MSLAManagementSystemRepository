@@ -17,6 +17,8 @@ namespace MSLAManagementSystem.UI
 
             //register pages 
             container.Register<IPage, MainPageViewModel>(PageKind.Main.ToString(), Lifetime.Singleton);
+            container.Register<IPage, PersonsPageViewModel>(PageKind.Persons.ToString(), Lifetime.Singleton);
+            container.Register<IPage, AdressesPageViewModel>(PageKind.Adresses.ToString(), Lifetime.Singleton);
 
             container.Register<IPageProvider, PageProvider>(Lifetime.Singleton);
         }

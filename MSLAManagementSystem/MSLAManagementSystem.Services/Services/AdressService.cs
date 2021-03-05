@@ -1,24 +1,49 @@
 ﻿using MSLAManagementSystem.Core;
 using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Services;
-using System;
+
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Services.Services
 {
-    public class AdressService : EntityService<Adress>, IAdressService
+    public class AdressService : IAdressService
     {
-        public  AdressService(IUnitOfWork unitOfWork)
-            :base(unitOfWork)
-        {
+        private readonly IUnitOfWork unitOfWork;
 
+        public AdressService(IUnitOfWork unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
         }
 
-        public override async Task Update(Adress entity)
+        public async Task<AdressEntity> Create(AdressEntity entity)
         {
-            var entitytoUpdate = await unitOfWork.GetRepository<Adress>().GetByIdAsync(entity.Id);
+            await unitOfWork.GetRepository<AdressEntity>().AddAsync(entity);
+            await unitOfWork.CommitAsync();
+
+            return entity;
+        }
+
+        public  async Task Delete(AdressEntity entity)
+        {
+            unitOfWork.GetRepository<AdressEntity>().Remove(entity);
+            await unitOfWork.CommitAsync();
+        }
+
+        public async Task<IEnumerable<AdressEntity>> GetAll()
+        {
+            return await unitOfWork.GetRepository<AdressEntity>().GetAllAsync();
+        }
+
+        public async Task<AdressEntity> GetById(int id)
+        {
+            return await unitOfWork.GetRepository<AdressEntity>().GetByIdAsync(id);
+        }
+
+        public  async Task Update(AdressEntity entity)
+        {
+            var entitytoUpdate = await unitOfWork.GetRepository<AdressEntity>().GetByIdAsync(entity.Id);
             entitytoUpdate.Street = entity.Street;
             await unitOfWork.CommitAsync();
         }

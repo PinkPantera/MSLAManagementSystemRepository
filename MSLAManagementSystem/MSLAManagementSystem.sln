@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.StartU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.UI", "MSLAManagementSystem.UI\MSLAManagementSystem.UI.csproj", "{FC1481A2-F8EC-4D17-8B4D-92F52E1A389B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSLAManagementSystem.ClientDataServices", "MSLAManagementSystem.ClientDataServices\MSLAManagementSystem.ClientDataServices.csproj", "{E6069610-0968-4E58-9ED4-846C18DAC2E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{FC1481A2-F8EC-4D17-8B4D-92F52E1A389B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC1481A2-F8EC-4D17-8B4D-92F52E1A389B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC1481A2-F8EC-4D17-8B4D-92F52E1A389B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6069610-0968-4E58-9ED4-846C18DAC2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6069610-0968-4E58-9ED4-846C18DAC2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6069610-0968-4E58-9ED4-846C18DAC2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6069610-0968-4E58-9ED4-846C18DAC2E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{D33679DB-F157-4716-A1F2-E4D534FD83DB} = {BB0A8149-C09E-4BDA-99E1-33304495D7A1}
 		{11E72B60-4589-4D70-9505-B40DFB956D42} = {BB0A8149-C09E-4BDA-99E1-33304495D7A1}
 		{FC1481A2-F8EC-4D17-8B4D-92F52E1A389B} = {BB0A8149-C09E-4BDA-99E1-33304495D7A1}
+		{E6069610-0968-4E58-9ED4-846C18DAC2E8} = {BB0A8149-C09E-4BDA-99E1-33304495D7A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDF78DAB-AD21-4DD5-8808-FF343228AFAA}
