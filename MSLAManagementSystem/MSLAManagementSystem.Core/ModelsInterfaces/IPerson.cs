@@ -12,8 +12,8 @@ namespace MSLAManagementSystem.Core.ModelsInterfaces
         DateTime DateOfBirth { get; set; }
         string IdentityCard { get; set; }
         int? AdressId { get; set; }
-
         string Phone { get; set; }
         string Email { get; set; }
+        bool Active { get; set; }
     }
 }

@@ -43,6 +43,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
             builder
                 .Property(m => m.CreatedDate)
                 .HasDefaultValueSql("GETDATE()");
+            builder
+                .Property(m => m.Active)
+                .IsRequired();
 
             builder
                 .ToTable("Persons");

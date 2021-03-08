@@ -20,6 +20,9 @@ namespace MSLAManagementSystem.Core.Models
         public AdressEntity Adress { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public ICollection<AttendanceLogEntity> AttendanceLogs { get; set; } 
+        public bool Active { get; set; }
+
+        public ICollection<AttendanceLogEntity> AttendanceLogs { get; set; }
+        
     }
 }
