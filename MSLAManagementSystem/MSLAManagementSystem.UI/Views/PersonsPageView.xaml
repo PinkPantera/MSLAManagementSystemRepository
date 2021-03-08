@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MSLAManagementSystem.UI.Views"
+             xmlns:converters="clr-namespace:MSLAManagementSystem.UI.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -18,11 +18,21 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{StaticResource TextBlockUserName}" Text="{Binding Caption}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock  Style="{StaticResource TextBlockPageTitle}" Text="{Binding Caption}"/>
+            <ProgressBar Grid.Row="2" 
+                         Height="15" Width="120" HorizontalAlignment="Left"
+                         IsIndeterminate="{Binding LoadingInProgress}"
+                         Visibility="{Binding LoadingInProgress, Converter={converters:BooleanToVisibility}}"/>
+        </StackPanel>
+        
+       
         <ItemsControl Grid.Row="1" 
                          ItemTemplate="{StaticResource PersonControlTemplate}" 
                          ItemsSource="{Binding Persons}" />
+
     </Grid>
 </UserControl>

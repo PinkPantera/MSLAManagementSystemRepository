@@ -11,7 +11,8 @@
         <Setter Property="BorderBrush" Value="#5d6e75"/>
         <Setter Property="Padding" Value="3"/>
     </Style>
-
+ 
+    <!--#region IconTextButton -->
     <Style x:Key="ButtonMenu" TargetType="{x:Type controls:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="#285f78"/>
@@ -35,33 +36,70 @@
         <Setter Property="Padding" Value="5"/>
         <Setter Property="Margin" Value="0 0 5 0"/>
     </Style>
+    <!--#endregion IconTextButton-->
+
+    <!--#region TextBlock -->
+    <Style x:Key="TextBlockPageTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#023d4a" />
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial Nova Light"/>
+        <Setter Property="Margin" Value="10 5"/>
+    </Style>
 
     <Style x:Key="TextBlockUserName" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="Foreground" Value="#023d4a" />
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Arial Nova Light"/>
     </Style>
 
+    <Style x:Key="TextBlockTable" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#818e91" />
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial Nova Light"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="5 3"/>
+    </Style>
+    
+    <Style x:Key="TextBlockEmail" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
+        <Setter Property="FontStyle" Value="Italic"/>
+    </Style>
+
+    <Style x:Key="TextBlockAdress" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <Style x:Key="TextBlockName" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#023d4a" />
+    </Style>
+    <!--#endregion TextBlock-->
+
+    <!--#region DataTemplate -->
     <DataTemplate x:Key="PersonControlTemplate">
-        <Grid>
+        <Grid Background="#d7dfe0" Margin="0 2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding FirstName}"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SecondName}"/>
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Phone}"/>
-            <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Email}"/>
-            <TextBlock Grid.Row="0" Grid.Column="4" Text="{Binding IdentityCard}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockName}" Text="{Binding SecondName}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlockName}" Text="{Binding FirstName}"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBlockTable}" Text="{Binding Phone}"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockEmail}" Text="{Binding Email}"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Style="{StaticResource TextBlockTable}" Text="{Binding IdentityCard}"/>
+            <TextBlock Grid.Row="0" Grid.Column="5" Style="{StaticResource TextBlockAdress}" Text="{Binding Adress}"/>
         </Grid>
     </DataTemplate>
+    <!--#endregion DataTemplate-->
 </ResourceDictionary>

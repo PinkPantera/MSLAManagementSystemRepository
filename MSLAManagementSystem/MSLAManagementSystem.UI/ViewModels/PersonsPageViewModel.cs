@@ -15,6 +15,7 @@ namespace MSLAManagementSystem.UI.ViewModels
     {
         private IPersonServiceClient personService;
         private PersonModel selectedPerson;
+        private bool loadingInProgress;
 
         public PersonsPageViewModel(IPersonServiceClient personService)
         {
@@ -38,6 +39,16 @@ namespace MSLAManagementSystem.UI.ViewModels
             }
         }
 
+        public bool LoadingInProgress
+        {
+            get { return loadingInProgress; }
+            set
+            {
+                SetProperty(ref loadingInProgress, value);
+            }
+
+        }
+
         public bool CanClose()
         {
             return true;
@@ -45,14 +56,17 @@ namespace MSLAManagementSystem.UI.ViewModels
 
         public async void Refreshe()
         {
+            LoadingInProgress = true;
             var list = await personService.GetAll();
 
             Persons.Clear();
+          
             foreach (var item in list)
             {
                 Persons.Add(item);
             }
 
+            LoadingInProgress = false;
         }
     }
 }
