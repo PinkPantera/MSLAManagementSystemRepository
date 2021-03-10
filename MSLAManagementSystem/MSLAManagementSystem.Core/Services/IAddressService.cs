@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Core.Services
 {
-    public interface IAdressService: IEntityService<AdressEntity>
+    public interface IAddressService: IEntityService<AddressEntity>
     {
         //TODO 
         //needs to define the operations which our project are required

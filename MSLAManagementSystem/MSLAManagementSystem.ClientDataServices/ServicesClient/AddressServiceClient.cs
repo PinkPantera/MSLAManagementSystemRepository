@@ -12,27 +12,27 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.ClientDataServices.ServicesClient
 {
-    public class AdressServiceClient : IAdressServiceClient
+    public class AddressServiceClient : IAddressServiceClient
     {
         private ISettings settings;
-        public AdressServiceClient(ISettings settings)
+        public AddressServiceClient(ISettings settings)
         {
             this.settings = settings;
         }
 
-        public async Task<IEnumerable<AdressModel>> GetAll()
+        public async Task<IEnumerable<AddressModel>> GetAll()
         {
-            var listAdresses = new List<AdressModel>();
+            var listAddresses = new List<AddressModel>();
             using (var httpClient = new HttpClient())
             {
-                using (var reponce = await httpClient.GetAsync(settings.UrlAdress))
+                using (var reponce = await httpClient.GetAsync(settings.UrlAddress))
                 {
                     var apiReponce = await reponce.Content.ReadAsStringAsync();
-                    listAdresses = JsonConvert.DeserializeObject<List<AdressModel>>(apiReponce);
+                    listAddresses = JsonConvert.DeserializeObject<List<AddressModel>>(apiReponce);
                 }
             }
 
-            return listAdresses;
+            return listAddresses;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Repositories
 {
-    public class AdressRepository: Repository<AdressEntity>, IAdressRepository
+    public class AddressRepository: Repository<AddressEntity>, IAddressRepository
     {
         private ManagementSystemDbContext managementSystemDbContext
         {
@@ -15,7 +15,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
 
         }
 
-        public AdressRepository(ManagementSystemDbContext context)
+        public AddressRepository(ManagementSystemDbContext context)
             : base(context)
         {
 

@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AdressesPageTitle" xml:space="preserve">
+  <data name="AddPersonTitle" xml:space="preserve">
+    <value>Добавить нового человека</value>
+  </data>
+  <data name="AddressesPageTitle" xml:space="preserve">
     <value>Адреса</value>
+  </data>
+  <data name="AddressTitle" xml:space="preserve">
+    <value>Адрес</value>
   </data>
   <data name="AttendanceLogPageTitle" xml:space="preserve">
     <value>Журнал работы</value>
@@ -132,14 +138,32 @@
   <data name="CurrentDayPageTitle" xml:space="preserve">
     <value>Текущий день</value>
   </data>
+  <data name="DateOfBirthTitle" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="DeletePesonTitle" xml:space="preserve">
+    <value>Удалить информацию о человеке</value>
+  </data>
+  <data name="EditPesonTitle" xml:space="preserve">
+    <value>Редактировать информацию о человеке</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>Электронный адрес</value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Выход</value>
+  </data>
+  <data name="IdentityCardTitle" xml:space="preserve">
+    <value>Удостоверение личности</value>
   </data>
   <data name="NotSignedIn" xml:space="preserve">
     <value>нет входа в систему</value>
   </data>
   <data name="PersonsPageTitle" xml:space="preserve">
     <value>Сотрудники</value>
+  </data>
+  <data name="PhoneTitle" xml:space="preserve">
+    <value>Телефон</value>
   </data>
   <data name="PlanningPageTitle" xml:space="preserve">
     <value>Планирование</value>
@@ -149,8 +173,5 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Система управления</value>
-  </data>
-  <data name="WindowTitle1" xml:space="preserve">
-    <value>Management System</value>
   </data>
 </root>

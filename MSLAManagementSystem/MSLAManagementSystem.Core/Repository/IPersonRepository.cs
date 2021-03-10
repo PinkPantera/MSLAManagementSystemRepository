@@ -9,6 +9,6 @@ namespace MSLAManagementSystem.Core.Repository
 {
     public interface IPersonRepository : IRepository<PersonEntity>
     {
-        Task<IEnumerable<PersonEntity>> GetAllWithAdressAsync();
+        Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync();
     }
 }

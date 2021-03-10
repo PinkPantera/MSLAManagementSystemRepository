@@ -11,10 +11,6 @@ namespace MSLAManagementSystem.Core.Services
         //TODO 
         //needs to define the operations which our projet are required
 
-        //Task<IEnumerable<Adress>> GetAllBuildings();
-        //Task<Building> GetBuildingById(int id);
-        //Task<Building> CreatBuilding(Building building);
-        //Task<Building> UpadteBuilding(Building building);
-        //Task DeleteBuilding(Building building);
+
     }
 }

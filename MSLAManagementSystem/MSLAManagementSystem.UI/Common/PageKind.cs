@@ -10,7 +10,7 @@ namespace MSLAManagementSystem.UI.Common
 
         Main,
         Persons,
-        Adresses,
+        Addresses,
         Buildings,
         ControlPosts,
         AttendanceLogs,

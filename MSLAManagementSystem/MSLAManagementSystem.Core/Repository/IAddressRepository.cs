@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MSLAManagementSystem.Core.Repository
 {
-    public interface IAdressRepository : IRepository<AdressEntity>
+    public interface IAddressRepository : IRepository<AddressEntity>
     {
     }
 }

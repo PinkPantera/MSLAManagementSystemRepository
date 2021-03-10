@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:MSLAManagementSystem.UI.Converters"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:customControls="clr-namespace:MSLAManagementSystem.UI.CustomControls"
+             xmlns:resx="clr-namespace:MSLAManagementSystem.UI"
+             mc:Ignorable="d" >
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,26 +15,165 @@
                 <ResourceDictionary Source="pack://application:,,,/MSLAManagementSystem.UI;component/Style/MSLAManagementSystemStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+        <!--<BitmapImage x:Key="PersonImage" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/person.png"/>-->
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0 10"
+                    Visibility="{Binding IsEditMode, Converter={converters:BooleanToVisibility}}">
+            <!--Photo-->
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Style="{StaticResource TextBlockCaption}" Margin="0 0 0 5"
+                           Text="{Binding CurrentDataOperation}"/>
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <Image Source="{DynamicResource PersonDefaultImage}" Stretch="Uniform" Width="150"/>
+                </Border>
+            </StackPanel>
+            <!--Person Information-->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 15 10 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.SecondNameTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="200"
+                             Text="{Binding PersonToEdit.SecondName}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}" Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.FirstNameTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}"  Width="200"
+                             Text="{Binding PersonToEdit.FirstName}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.DateOfBirthTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="130" 
+                             Text="{Binding PersonToEdit.DateOfBirth}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}" Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.IdentityCardTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}"  Width="130"
+                             Text="{Binding PersonToEdit.IdentityCard}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.PhoneTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="130"
+                             Text="{Binding PersonToEdit.Phone}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0 5 0 0">
+
+                    <TextBlock Style="{StaticResource TextBlockTable}" Margin="0 0 20 0"
+                               Text="{x:Static resx:Resource.EmailTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}"  Width="250"
+                             Text="{Binding PersonToEdit.Email}"/>
+                </StackPanel>
+            </StackPanel>
+            <!--Address Information-->
+            <StackPanel Orientation="Vertical" Margin="20 15 10 0"  HorizontalAlignment="Right">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 20 0" HorizontalAlignment="Right"
+                               Text="{x:Static resx:Resource.AddressTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Height="47"  Width ="200" HorizontalAlignment="Right" 
+                             AcceptsReturn="True" TextWrapping="Wrap"
+                             Text="{Binding PersonToEdit.Address.ShortAddress}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 10 0"
+                               Text="{x:Static resx:Resource.CityCodeTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="60" 
+                               Text="{Binding PersonToEdit.Address.CityCode}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}" HorizontalAlignment="Right"  Margin="0 0 10 0"
+                               Text="{x:Static resx:Resource.TownTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="200"
+                               Text="{Binding PersonToEdit.Address.Town}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}" Margin="0 0 10 0"
+                               Text="{x:Static resx:Resource.RegionTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}"  Width="200"
+                             Text="{Binding PersonToEdit.Address.Region}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+                    <TextBlock Style="{StaticResource TextBlockTable}" Margin="0 0 10 0"
+                               Text="{x:Static resx:Resource.CountryTitle}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}"  Width="200"
+                               Text="{Binding PersonToEdit.Address.Country}"/>
+                </StackPanel>
+            </StackPanel>
+            <!--Buttons-->
+            <StackPanel Orientation="Vertical" Margin="0 20 0 0" >
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}"
+                                               IconVisibility="Collapsed"
+                                               Content="Save changes"
+                                               Command="{Binding SaveChangesCommand}"/>
+                <customControls:IconTextButton Style="{StaticResource ButtonMenu}" Margin="0 10 0 0"
+                                               IconVisibility="Collapsed"
+                                               Content="Cancel"
+                                               Command="{Binding CancelCommand}"/>
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
             <TextBlock  Style="{StaticResource TextBlockPageTitle}" Text="{Binding Caption}"/>
             <ProgressBar Grid.Row="2" 
                          Height="15" Width="120" HorizontalAlignment="Left"
                          IsIndeterminate="{Binding LoadingInProgress}"
                          Visibility="{Binding LoadingInProgress, Converter={converters:BooleanToVisibility}}"/>
         </StackPanel>
-        
-       
-        <ItemsControl Grid.Row="1" 
-                         ItemTemplate="{StaticResource PersonControlTemplate}" 
-                         ItemsSource="{Binding Persons}" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 5">
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 10 10 0"
+                                           IconSource="{DynamicResource AddPersonIcon}"  IconHeight="25"
+                                           TextVisibility="Collapsed"
+                                           ToolTip="{x:Static resx:Resource.AddPersonTitle}"
+                                           Command="{Binding NewPersonCommand}"
+                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 10 10 0"
+                                           IconSource="{DynamicResource EditPersonIcon}"  IconHeight="25"
+                                           TextVisibility="Collapsed"
+                                           ToolTip="{x:Static resx:Resource.EditPesonTitle}"
+                                           Command="{Binding EditPersonCommand}"
+                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+            <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 10 10 0"
+                                           IconSource="{DynamicResource DeletePersonIcon}"  IconHeight="25"
+                                           TextVisibility="Collapsed"
+                                           ToolTip="{x:Static resx:Resource.DeletePersonTitle}"
+                                           Command="{Binding NewPersonCommand}"
+                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+        </StackPanel>
+
+
+
+        <ListBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Padding="0" 
+                 ItemTemplate="{StaticResource PersonControlTemplate}"
+                 ItemsSource="{Binding Persons}"
+                 SelectedItem="{Binding Path = SelectedPerson, Mode=TwoWay}">
+
+        </ListBox>
+
 
     </Grid>
 </UserControl>

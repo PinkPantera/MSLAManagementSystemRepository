@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AdressesPageTitle" xml:space="preserve">
+  <data name="AddPersonTitle" xml:space="preserve">
+    <value>Ajouter une nouvelle personne</value>
+  </data>
+  <data name="AddressesPageTitle" xml:space="preserve">
     <value>Adresses</value>
+  </data>
+  <data name="AddressTitle" xml:space="preserve">
+    <value>Adresse</value>
   </data>
   <data name="AttendanceLogPageTitle" xml:space="preserve">
     <value>Journal de présence</value>
@@ -132,14 +138,32 @@
   <data name="CurrentDayPageTitle" xml:space="preserve">
     <value>Jour actuel</value>
   </data>
+  <data name="DateOfBirthTitle" xml:space="preserve">
+    <value>Date de naissance</value>
+  </data>
+  <data name="DeletePersonTitle" xml:space="preserve">
+    <value>Supprimer la personne</value>
+  </data>
+  <data name="EditPesonTitle" xml:space="preserve">
+    <value>Modifier la personne</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Sortir</value>
+  </data>
+  <data name="IdentityCardTitle" xml:space="preserve">
+    <value>Carte d'identité</value>
   </data>
   <data name="NotSignedIn" xml:space="preserve">
     <value>pas connecté</value>
   </data>
   <data name="PersonsPageTitle" xml:space="preserve">
     <value>Employés</value>
+  </data>
+  <data name="PhoneTitle" xml:space="preserve">
+    <value>Téléphone</value>
   </data>
   <data name="PlanningPageTitle" xml:space="preserve">
     <value>Planification</value>

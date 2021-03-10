@@ -44,7 +44,7 @@ namespace MSLAManagementSystem.API
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IAdressService, AdressService>();
+            services.AddTransient<IAddressService, AddressService>();
             services.AddTransient<IPersonService, PersonService>();
 
             //swagger

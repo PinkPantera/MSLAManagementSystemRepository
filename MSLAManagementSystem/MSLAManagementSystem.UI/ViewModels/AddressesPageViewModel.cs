@@ -6,11 +6,11 @@ using System.Text;
 
 namespace MSLAManagementSystem.UI.ViewModels
 {
-    public class AdressesPageViewModel : ViewModelBase,IPage
+    public class AddressesPageViewModel : ViewModelBase,IPage
     {
-        public PageKind PageKind => PageKind.Adresses;
+        public PageKind PageKind => PageKind.Addresses;
 
-        public string Caption => Resource.AdressesPageTitle;
+        public string Caption => Resource.AddressesPageTitle;
 
         public Action CloseWindow { get; set; }
 

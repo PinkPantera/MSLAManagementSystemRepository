@@ -8,6 +8,6 @@ namespace MSLAManagementSystem.ClientDataServices.Interfaces
     {
         string Url { get; }
         string UrlPerson { get; }
-        string UrlAdress { get; }
+        string UrlAddress { get; }
     }
 }

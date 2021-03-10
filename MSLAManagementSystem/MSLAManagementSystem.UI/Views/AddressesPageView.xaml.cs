@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace MSLAManagementSystem.UI.Views
 {
     /// <summary>
-    /// Interaction logic for AdressesPageViewModel.xaml
+    /// Interaction logic for AddressesPageViewModel.xaml
     /// </summary>
-    public partial class AdressesPageView : UserControl
+    public partial class AddressesPageView : UserControl
     {
-        public AdressesPageView()
+        public AddressesPageView()
         {
             InitializeComponent();
         }

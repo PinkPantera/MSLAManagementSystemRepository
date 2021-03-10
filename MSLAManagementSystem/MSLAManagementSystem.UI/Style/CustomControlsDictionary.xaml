@@ -14,8 +14,7 @@
                             <Image Source="{TemplateBinding IconSource}" 
                                    Stretch="Uniform"
                                    Visibility="{TemplateBinding IconVisibility}"
-                                   Width="{TemplateBinding IconWidth}" Height="{TemplateBinding IconHeight}"
-                                   Margin="2 2"/>
+                                   Width="{TemplateBinding IconWidth}" Height="{TemplateBinding IconHeight}" />
 
                             <ContentControl Content="{TemplateBinding Content}" 
                                             Visibility="{TemplateBinding TextVisibility}"
@@ -28,6 +27,9 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="#7AA6B9"/>
+            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#7AA6B9"/>
                 <Setter Property="BorderBrush" Value="#1E7EA8"/>

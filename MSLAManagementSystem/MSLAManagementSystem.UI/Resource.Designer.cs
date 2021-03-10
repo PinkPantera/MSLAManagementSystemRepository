@@ -61,11 +61,29 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adresses.
+        ///   Looks up a localized string similar to Add new Person.
         /// </summary>
-        public static string AdressesPageTitle {
+        public static string AddPersonTitle {
             get {
-                return ResourceManager.GetString("AdressesPageTitle", resourceCulture);
+                return ResourceManager.GetString("AddPersonTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Addresses.
+        /// </summary>
+        public static string AddressesPageTitle {
+            get {
+                return ResourceManager.GetString("AddressesPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string AddressTitle {
+            get {
+                return ResourceManager.GetString("AddressTitle", resourceCulture);
             }
         }
         
@@ -88,11 +106,29 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Postal code.
+        /// </summary>
+        public static string CityCodeTitle {
+            get {
+                return ResourceManager.GetString("CityCodeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Guardian housing.
         /// </summary>
         public static string ControlPostsPageTitle {
             get {
                 return ResourceManager.GetString("ControlPostsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string CountryTitle {
+            get {
+                return ResourceManager.GetString("CountryTitle", resourceCulture);
             }
         }
         
@@ -106,11 +142,65 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date of Birth.
+        /// </summary>
+        public static string DateOfBirthTitle {
+            get {
+                return ResourceManager.GetString("DateOfBirthTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Person.
+        /// </summary>
+        public static string DeletePersonTitle {
+            get {
+                return ResourceManager.GetString("DeletePersonTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Person.
+        /// </summary>
+        public static string EditPesonTitle {
+            get {
+                return ResourceManager.GetString("EditPesonTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        public static string EmailTitle {
+            get {
+                return ResourceManager.GetString("EmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        public static string FirstNameTitle {
+            get {
+                return ResourceManager.GetString("FirstNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity card.
+        /// </summary>
+        public static string IdentityCardTitle {
+            get {
+                return ResourceManager.GetString("IdentityCardTitle", resourceCulture);
             }
         }
         
@@ -133,6 +223,15 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string PhoneTitle {
+            get {
+                return ResourceManager.GetString("PhoneTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Planning.
         /// </summary>
         public static string PlanningPageTitle {
@@ -142,11 +241,47 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        public static string RegionTitle {
+            get {
+                return ResourceManager.GetString("RegionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Second name.
+        /// </summary>
+        public static string SecondNameTitle {
+            get {
+                return ResourceManager.GetString("SecondNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string SettingsPageTitle {
             get {
                 return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string ShortAdrdressTitle {
+            get {
+                return ResourceManager.GetString("ShortAdrdressTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Town.
+        /// </summary>
+        public static string TownTitle {
+            get {
+                return ResourceManager.GetString("TownTitle", resourceCulture);
             }
         }
         

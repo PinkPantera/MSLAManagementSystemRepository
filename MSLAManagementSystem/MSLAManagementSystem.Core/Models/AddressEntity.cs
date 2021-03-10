@@ -6,11 +6,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Core.Models
 {
-    public class AdressEntity: BasicEntity, IAdress
+    public class AddressEntity: BasicEntity, IAddress
     {
-        public string Street { get; set; }
-        public string HouseNumber  { get; set; }
-        public string ApartmentNumber { get; set; }
+        public string ShortAddress { get; set; }
         public string Town { get; set; }
         public string Region { get; set; }
         public string Country { get; set; }

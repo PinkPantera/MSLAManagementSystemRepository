@@ -14,11 +14,6 @@ namespace MSLAManagementSystem.Data.SQLServer
     {
         private readonly ManagementSystemDbContext context;
         private bool disposed = false;
-        //private IPersonRepository personRepository;
-        //private IAdressRepository adressRepository;
-        //private IBuildingRepository buildingRepository;
-        //private IControlPostRepository controlPostRepository;
-        //private IAttendanceLogRepository attendanceLogRepository;
         private readonly Dictionary<Type, object> repositories = new Dictionary<Type, object>();
 
 

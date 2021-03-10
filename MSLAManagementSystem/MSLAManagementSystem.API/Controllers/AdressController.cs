@@ -11,19 +11,19 @@ namespace MSLAManagementSystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdressController : ControllerBase
+    public class AddressController : ControllerBase
     {
-        public IAdressService adressService;
-        public AdressController(IAdressService adressService)
+        public IAddressService addressService;
+        public AddressController(IAddressService addressService)
         {
-            this.adressService = adressService;
+            this.addressService = addressService;
         }
 
 
         [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<AdressEntity>>> GetAllAdresses()
+        public async Task<ActionResult<IEnumerable<AddressEntity>>> GetAllAddresses()
         {
-            var persons = await adressService.GetAll();
+            var persons = await addressService.GetAll();
             return Ok(persons);
         }
     }

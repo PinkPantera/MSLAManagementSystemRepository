@@ -6,11 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Images\adresse.png" />
+    <None Remove="Resources\Images\add-person.png" />
+    <None Remove="Resources\Images\addresse.png" />
     <None Remove="Resources\Images\applicationexit.png" />
     <None Remove="Resources\Images\attendanceLog.png" />
     <None Remove="Resources\Images\buildings.png" />
     <None Remove="Resources\Images\controlPost.png" />
+    <None Remove="Resources\Images\delete-person.png" />
+    <None Remove="Resources\Images\edit-person.png" />
+    <None Remove="Resources\Images\person.png" />
     <None Remove="Resources\Images\persons.png" />
     <None Remove="Resources\Images\planning.png" />
     <None Remove="Resources\Images\settings.png" />
@@ -45,7 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Images\adresse.png">
+    <Resource Include="Resources\Images\add-person.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\addresse.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\applicationexit.png">
@@ -58,6 +65,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\controlPost.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\delete-person.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\edit-person.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\person.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\persons.png">

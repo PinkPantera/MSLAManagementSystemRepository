@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Configuration
 {
-    public class AdressConfiguration : IEntityTypeConfiguration<AdressEntity>
+    public class AddressConfiguration : IEntityTypeConfiguration<AddressEntity>
     {
-        public void Configure(EntityTypeBuilder<AdressEntity> builder)
+        public void Configure(EntityTypeBuilder<AddressEntity> builder)
         {
 
             builder.HasKey(m => m.Id);
@@ -19,18 +19,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .UseIdentityColumn();
 
             builder
-                .Property(m => m.ApartmentNumber)
-                .HasMaxLength(10);
-
-            builder
-                .Property(m => m.HouseNumber)
+                .Property(m => m.ShortAddress)
                 .IsRequired()
-                .HasMaxLength(10);
-
-            builder
-                .Property(m => m.Street)
-                .IsRequired()
-                .HasMaxLength(40);
+                .HasMaxLength(140);
 
             builder
                 .Property(m => m.Region)
@@ -56,7 +47,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .HasDefaultValueSql("GETDATE()");
 
             builder
-                .ToTable("Adresses");
+                .ToTable("Addresses");
         }
     }
 }

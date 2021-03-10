@@ -43,9 +43,10 @@ namespace MSLAManagementSystem.Services.Services
             return await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<PersonEntity>> GetAllWithAdressAsync()
+        public async Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync()
         {
-          return await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>()).GetAllWithAdressAsync();
+          return await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>())
+                .GetAllWithAddressAsync();
         }
 
         public  async Task Update(PersonEntity entity)

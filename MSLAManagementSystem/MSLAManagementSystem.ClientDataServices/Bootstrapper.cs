@@ -11,7 +11,7 @@ namespace MSLAManagementSystem.ClientDataServices
     {
         public static void Initialize(DependencyContainer container)
         {
-            container.Register<IAdressServiceClient, AdressServiceClient>(Lifetime.Singleton);
+            container.Register<IAddressServiceClient, AddressServiceClient>(Lifetime.Singleton);
             container.Register<IPersonServiceClient, PersonServiceClient>(Lifetime.Singleton);
         }
     }

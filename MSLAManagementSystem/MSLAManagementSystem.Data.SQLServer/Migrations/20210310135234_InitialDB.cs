@@ -8,14 +8,12 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Adresses",
+                name: "Addresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Street = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
-                    HouseNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    ApartmentNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    ShortAddress = table.Column<string>(type: "nvarchar(140)", maxLength: 140, nullable: false),
                     Town = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Region = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Country = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
@@ -24,7 +22,21 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Adresses", x => x.Id);
+                    table.PrimaryKey("PK_Addresses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Photos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,7 +45,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AdressId = table.Column<int>(type: "int", nullable: false),
+                    AddressId = table.Column<int>(type: "int", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
                 },
@@ -41,9 +53,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 {
                     table.PrimaryKey("PK_ControlPosts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ControlPosts_Adresses_AdressId",
-                        column: x => x.AdressId,
-                        principalTable: "Adresses",
+                        name: "FK_ControlPosts_Addresses_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -58,7 +70,8 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     SecondName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdentityCard = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AdressId = table.Column<int>(type: "int", nullable: true),
+                    AddressId = table.Column<int>(type: "int", nullable: true),
+                    PhotoId = table.Column<int>(type: "int", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
@@ -68,9 +81,15 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 {
                     table.PrimaryKey("PK_Persons", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Persons_Adresses_AdressId",
-                        column: x => x.AdressId,
-                        principalTable: "Adresses",
+                        name: "FK_Persons_Addresses_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Addresses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Persons_Photos_PhotoId",
+                        column: x => x.PhotoId,
+                        principalTable: "Photos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -82,7 +101,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    AdressId = table.Column<int>(type: "int", nullable: false),
+                    AddressId = table.Column<int>(type: "int", nullable: false),
                     ControlPostId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
                 },
@@ -90,9 +109,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 {
                     table.PrimaryKey("PK_Buildings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Buildings_Adresses_AdressId",
-                        column: x => x.AdressId,
-                        principalTable: "Adresses",
+                        name: "FK_Buildings_Addresses_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -144,9 +163,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 column: "PersonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Buildings_AdressId",
+                name: "IX_Buildings_AddressId",
                 table: "Buildings",
-                column: "AdressId");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Buildings_ControlPostId",
@@ -154,14 +173,19 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 column: "ControlPostId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ControlPosts_AdressId",
+                name: "IX_ControlPosts_AddressId",
                 table: "ControlPosts",
-                column: "AdressId");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Persons_AdressId",
+                name: "IX_Persons_AddressId",
                 table: "Persons",
-                column: "AdressId");
+                column: "AddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Persons_PhotoId",
+                table: "Persons",
+                column: "PhotoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -179,7 +203,10 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 name: "ControlPosts");
 
             migrationBuilder.DropTable(
-                name: "Adresses");
+                name: "Photos");
+
+            migrationBuilder.DropTable(
+                name: "Addresses");
         }
     }
 }

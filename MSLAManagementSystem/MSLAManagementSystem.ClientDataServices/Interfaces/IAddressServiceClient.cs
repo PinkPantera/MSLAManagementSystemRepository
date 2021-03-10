@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.ClientDataServices.Interfaces
 {
-    public interface IAdressServiceClient
+    public interface IAddressServiceClient
     {
-        Task<IEnumerable<AdressModel>> GetAll();
+        Task<IEnumerable<AddressModel>> GetAll();
     }
 
 }

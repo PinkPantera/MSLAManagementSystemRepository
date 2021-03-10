@@ -22,7 +22,6 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="IconWidth" Value="30"/>
         <Setter Property="Padding" Value="5"/>
-        <Setter Property="Margin" Value="0 0 5 0"/>
     </Style>
 
     <Style x:Key="ButtonMenuGray" TargetType="{x:Type controls:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
@@ -34,7 +33,6 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="IconWidth" Value="30"/>
         <Setter Property="Padding" Value="5"/>
-        <Setter Property="Margin" Value="0 0 5 0"/>
     </Style>
     <!--#endregion IconTextButton-->
 
@@ -46,6 +44,15 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Arial Nova Light"/>
         <Setter Property="Margin" Value="10 5"/>
+    </Style>
+
+    <Style x:Key="TextBlockCaption" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#023d4a" />
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial Nova Light"/>
+        <Setter Property="Margin" Value="0 5"/>
     </Style>
 
     <Style x:Key="TextBlockUserName" TargetType="{x:Type TextBlock}">
@@ -61,14 +68,14 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Arial Nova Light"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Padding" Value="5 3"/>
+        <Setter Property="Padding" Value="5 2 0 2"/>
     </Style>
     
     <Style x:Key="TextBlockEmail" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
         <Setter Property="FontStyle" Value="Italic"/>
     </Style>
 
-    <Style x:Key="TextBlockAdress" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
+    <Style x:Key="TextBlockAddress" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTable}">
         <Setter Property="FontSize" Value="10"/>
     </Style>
 
@@ -78,9 +85,18 @@
     </Style>
     <!--#endregion TextBlock-->
 
+    <Style x:Key="TextBoxEditMode"  TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="TextWrapping" Value="NoWrap" />
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#023d4a" />
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial Nova Light"/>
+    </Style>
+
     <!--#region DataTemplate -->
     <DataTemplate x:Key="PersonControlTemplate">
-        <Grid Background="#d7dfe0" Margin="0 2">
+        <Grid Background="#f2f9fa">
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -91,15 +107,16 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="190"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockName}" Text="{Binding SecondName}"/>
             <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlockName}" Text="{Binding FirstName}"/>
             <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBlockTable}" Text="{Binding Phone}"/>
             <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockEmail}" Text="{Binding Email}"/>
             <TextBlock Grid.Row="0" Grid.Column="4" Style="{StaticResource TextBlockTable}" Text="{Binding IdentityCard}"/>
-            <TextBlock Grid.Row="0" Grid.Column="5" Style="{StaticResource TextBlockAdress}" Text="{Binding Adress}"/>
+            <TextBlock Grid.Row="0" Grid.Column="5" Style="{StaticResource TextBlockAddress}" Text="{Binding Address}" />
         </Grid>
     </DataTemplate>
+  
     <!--#endregion DataTemplate-->
 </ResourceDictionary>

@@ -9,8 +9,8 @@
     <DataTemplate DataType="{x:Type viewModels:PersonsPageViewModel}">
         <views:PersonsPageView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type viewModels:AdressesPageViewModel}">
-        <views:AdressesPageView />
+    <DataTemplate DataType="{x:Type viewModels:AddressesPageViewModel}">
+        <views:AddressesPageView />
     </DataTemplate>
 
 </ResourceDictionary>

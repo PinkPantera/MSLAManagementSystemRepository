@@ -4,12 +4,10 @@ using System.Text;
 
 namespace MSLAManagementSystem.Core.ModelsInterfaces
 {
-    public interface IAdress : IBasicModel
+    public interface IAddress : IBasicModel
     {
         int Id { get; set; }
-        string Street { get; set; }
-        string HouseNumber { get; set; }
-        string ApartmentNumber { get; set; }
+        string ShortAddress{ get; set; }
         string Town { get; set; }
         string Region { get; set; }
         string Country { get; set; }

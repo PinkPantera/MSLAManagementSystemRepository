@@ -12,6 +12,6 @@ namespace MSLAManagementSystem.Core.Services
         //TODO 
         //needs to define the operations which our projet are required
 
-        Task<IEnumerable<PersonEntity>> GetAllWithAdressAsync();
+        Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync();
     }
 }

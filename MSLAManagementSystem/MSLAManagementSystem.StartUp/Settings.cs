@@ -11,6 +11,6 @@ namespace MSLAManagementSystem.StartUp
 
         public string UrlPerson => string.Concat(Url, "Person");
 
-        public string UrlAdress => string.Concat(Url, "Adress");
+        public string UrlAddress => string.Concat(Url, "Address");
     }
 }

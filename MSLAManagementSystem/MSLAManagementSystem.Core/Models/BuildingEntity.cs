@@ -7,8 +7,8 @@ namespace MSLAManagementSystem.Core.Models
     public class BuildingEntity: BasicEntity
     {
         public string Name { get; set; }
-        public int AdressId { get; set; }
-        public AdressEntity Adress { get; set; }
+        public int AddressId { get; set; }
+        public AddressEntity Address { get; set; }
         public int? ControlPostId { get; set; }
         public ControlPostEntity ControlPost { get; set; }
     }

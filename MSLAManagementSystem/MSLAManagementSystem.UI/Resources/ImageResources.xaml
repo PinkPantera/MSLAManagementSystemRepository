@@ -5,8 +5,8 @@
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/settings.png"/>
     <BitmapImage x:Key="ApplicationExitIcon" 
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/applicationexit.png"/>
-    <BitmapImage x:Key="AdresseIcon" 
-                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/adresse.png"/>
+    <BitmapImage x:Key="AddresseIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/addresse.png"/>
     <BitmapImage x:Key="PersonsIcon" 
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/persons.png"/>
     <BitmapImage x:Key="BuildingsIcon" 
@@ -19,5 +19,14 @@
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/today.png"/>
     <BitmapImage x:Key="PlanningIcon" 
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/planning.png"/>
+    <BitmapImage x:Key="AddPersonIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/add-person.png"/>
+    <BitmapImage x:Key="EditPersonIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/edit-person.png"/>
+    <BitmapImage x:Key="DeletePersonIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/delete-person.png"/>
+    <BitmapImage x:Key="PersonDefaultImage" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/person.png"/>
+
 
 </ResourceDictionary>

@@ -35,6 +35,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .Property(m => m.Email)
                 .IsRequired()
                 .HasMaxLength(50);
+
             builder
                 .Property(m => m.Phone)
                 .IsRequired()
@@ -43,6 +44,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
             builder
                 .Property(m => m.CreatedDate)
                 .HasDefaultValueSql("GETDATE()");
+
             builder
                 .Property(m => m.Active)
                 .IsRequired();
