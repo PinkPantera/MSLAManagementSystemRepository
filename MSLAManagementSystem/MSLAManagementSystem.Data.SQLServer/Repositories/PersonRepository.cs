@@ -23,11 +23,14 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
         {
 
         }
+
         public async Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync()
         {
             return await managementSystemDbContext.Persons
                 .Include(p => p.Address)
                 .ToListAsync();
         }
+
+
     }
 }

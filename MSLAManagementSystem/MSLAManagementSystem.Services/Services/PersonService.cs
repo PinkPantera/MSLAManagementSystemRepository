@@ -21,8 +21,16 @@ namespace MSLAManagementSystem.Services.Services
 
         public async Task<PersonEntity> Create(PersonEntity entity)
         {
-            await unitOfWork.GetRepository<PersonEntity>().AddAsync(entity);
-            await unitOfWork.CommitAsync();
+            try
+            {
+                await unitOfWork.GetRepository<PersonEntity>().AddAsync(entity);
+
+                await unitOfWork.CommitAsync();
+            }
+            catch (Exception ex)
+            { 
+
+            }
 
             return entity;
         }

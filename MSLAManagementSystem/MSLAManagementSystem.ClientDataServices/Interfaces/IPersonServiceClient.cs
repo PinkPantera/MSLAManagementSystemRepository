@@ -9,5 +9,6 @@ namespace MSLAManagementSystem.ClientDataServices.Interfaces
     public interface IPersonServiceClient
     {
         Task<IEnumerable<PersonModel>> GetAll();
+        Task<PersonModel> Create(PersonModel personModel);
     }
 }

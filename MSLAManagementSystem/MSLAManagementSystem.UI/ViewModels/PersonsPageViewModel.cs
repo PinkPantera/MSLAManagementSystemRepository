@@ -12,7 +12,7 @@ namespace MSLAManagementSystem.UI.ViewModels
 {
     public class PersonsPageViewModel : ViewModelBase, IPage
     {
-        private IPersonServiceClient personService;
+        private readonly IPersonServiceClient personService;
         private PersonModel selectedPerson;
         private bool loadingInProgress;
         private string currentDataOperation;
@@ -27,14 +27,13 @@ namespace MSLAManagementSystem.UI.ViewModels
             CancelCommand = new RelayCommand<object>(ExecuteCancelCommand);
             EditPersonCommand = new RelayCommand<object>(ExecuteEditPersonCommand);
             IsEditMode = false;
-            PersonToEdit = null;
         }
 
         public ICommand NewPersonCommand { get; }
         public ICommand SaveChangesCommand { get; }
         public ICommand CancelCommand { get; }
         public ICommand EditPersonCommand { get; }
-        public ObservableCollection<PersonModel> Persons { get; private set; } =  new ObservableCollection<PersonModel>();
+        public ObservableCollection<PersonModel> Persons { get; private set; } = new ObservableCollection<PersonModel>();
 
         public PageKind PageKind => PageKind.Persons;
 
@@ -52,10 +51,11 @@ namespace MSLAManagementSystem.UI.ViewModels
 
         public PersonModel SelectedPerson
         {
-           get { return selectedPerson; }
+            get { return selectedPerson; }
             set
             {
                 SetProperty(ref selectedPerson, value);
+                OnPropertyChanged(nameof(IsEnableEditUser));
             }
         }
 
@@ -84,6 +84,25 @@ namespace MSLAManagementSystem.UI.ViewModels
             set
             {
                 SetProperty(ref isEditMode, value);
+                OnPropertyChanged(nameof(IsEnableAddUser));
+                OnPropertyChanged(nameof(IsEnableEditUser));
+            }
+        }
+
+        public bool IsEnableAddUser
+        {
+            get
+            { 
+                return IsEditMode == false; 
+            }
+
+        }
+
+        public bool IsEnableEditUser
+        {
+            get
+            {
+                return SelectedPerson != null && SelectedPerson.Id != 0 && IsEditMode == false;
             }
         }
 
@@ -98,11 +117,14 @@ namespace MSLAManagementSystem.UI.ViewModels
             var list = await personService.GetAll();
 
             Persons.Clear();
-          
+
             foreach (var item in list)
             {
                 Persons.Add(item);
             }
+
+            if (Persons.Count > 0)
+                SelectedPerson = Persons.Count > 0 ? Persons[0] : new PersonModel();
 
             LoadingInProgress = false;
         }
@@ -126,10 +148,13 @@ namespace MSLAManagementSystem.UI.ViewModels
             IsEditMode = false;
         }
 
-        private void ExecuteSaveChangesCommand(object obj)
+        private async  void ExecuteSaveChangesCommand(object obj)
         {
             IsEditMode = false;
-            
+
+           var person = await personService.Create(PersonToEdit);
+            Persons.Add(person);
+
         }
         #endregion Commands
     }

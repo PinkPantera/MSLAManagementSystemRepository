@@ -17,6 +17,26 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             this.settings = settings;
         }
 
+        public async Task<PersonModel> Create(PersonModel personModel)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var personString = JsonConvert.SerializeObject(personModel);
+                var contentData = new StringContent(personString, System.Text.Encoding.UTF8, "application/json");
+                var reponse = await httpClient.PostAsync(settings.UrlPerson, contentData);
+                var result = reponse.IsSuccessStatusCode;
+
+                if (result)
+                {
+                    var ppStr = await reponse.Content.ReadAsStringAsync();
+                    var pp = JsonConvert.DeserializeObject<PersonModel>(ppStr);
+                    return pp;
+                }
+
+                throw new Exception(reponse.ReasonPhrase);
+            }
+        }
+
         public async Task<IEnumerable<PersonModel>> GetAll()
         {
             var listPersons = new List<PersonModel>();
@@ -31,5 +51,6 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
 
             return listPersons;
         }
+
     }
 }

@@ -26,5 +26,13 @@ namespace MSLAManagementSystem.API.Controllers
             var persons = await personService.GetAllWithAddressAsync();
             return Ok(persons);
         }
+
+        [HttpPost()]
+        public async Task<ActionResult<PersonEntity>> AddPerson(PersonEntity person)
+        {
+            var newPerson = await personService.Create(person);
+            return Ok(newPerson);
+        }
+
     }
 }

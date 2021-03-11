@@ -98,7 +98,7 @@
                     <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 10 0"
                                Text="{x:Static resx:Resource.CityCodeTitle}"/>
                     <TextBox Style="{StaticResource TextBoxEditMode}" Width="60" 
-                               Text="{Binding PersonToEdit.Address.CityCode}"/>
+                               Text="{Binding PersonToEdit.Address.СityСode}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
@@ -150,19 +150,19 @@
                                            TextVisibility="Collapsed"
                                            ToolTip="{x:Static resx:Resource.AddPersonTitle}"
                                            Command="{Binding NewPersonCommand}"
-                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+                                           IsEnabled="{Binding IsEnableAddUser}"/>
             <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 10 10 0"
                                            IconSource="{DynamicResource EditPersonIcon}"  IconHeight="25"
                                            TextVisibility="Collapsed"
                                            ToolTip="{x:Static resx:Resource.EditPesonTitle}"
                                            Command="{Binding EditPersonCommand}"
-                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+                                           IsEnabled="{Binding IsEnableEditUser}"/>
             <customControls:IconTextButton Style="{StaticResource ButtonMenu}"  Margin="0 10 10 0"
                                            IconSource="{DynamicResource DeletePersonIcon}"  IconHeight="25"
                                            TextVisibility="Collapsed"
                                            ToolTip="{x:Static resx:Resource.DeletePersonTitle}"
                                            Command="{Binding NewPersonCommand}"
-                                           IsEnabled="{Binding IsEditMode, Converter={converters:InverseBooleanConverter}}"/>
+                                           IsEnabled="{Binding IsEnableEditUser}"/>
         </StackPanel>
 
 

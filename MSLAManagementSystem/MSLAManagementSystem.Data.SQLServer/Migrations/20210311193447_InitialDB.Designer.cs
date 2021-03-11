@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSLAManagementSystem.Data.SQLServer.Migrations
 {
     [DbContext(typeof(ManagementSystemDbContext))]
-    [Migration("20210310135234_InitialDB")]
+    [Migration("20210311193447_InitialDB")]
     partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -295,8 +295,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
                 {
                     b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
+                        .WithMany("Persons")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("MSLAManagementSystem.Core.Models.PhotoEntity", "Photo")
                         .WithMany()
@@ -305,6 +306,11 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Address");
 
                     b.Navigation("Photo");
+                });
+
+            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AddressEntity", b =>
+                {
+                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>

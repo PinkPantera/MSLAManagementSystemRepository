@@ -13,15 +13,13 @@ namespace MSLAManagementSystem.ClientDataServices.Models
         public string SecondName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string IdentityCard { get; set; }
-        public int? AddressId { get; set; }
-        public AddressModel Address { get; set; }
+        public int AddressId { get; set; }
+        public AddressModel Address { get; set; } = new AddressModel();
         public string Phone { get; set; }
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool Active { get; set ; }
         public int? PhotoId { get ; set ; }
-        public PhotoModel Photo { get; set; }
-
-       // public event PropertyChangedEventHandler PropertyChanged;
+        public PhotoModel Photo { get; set; } = new PhotoModel();
     }
 }

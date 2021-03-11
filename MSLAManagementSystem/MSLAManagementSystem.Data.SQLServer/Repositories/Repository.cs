@@ -21,7 +21,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
 
         public async Task AddAsync(TEntity entity)
         {
-            await context.Set<TEntity>().AddAsync(entity);
+           await context.Set<TEntity>().AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
