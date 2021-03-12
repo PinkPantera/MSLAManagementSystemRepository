@@ -8,6 +8,28 @@ namespace MSLAManagementSystem.ClientDataServices.Models
 {
     public class PersonModel : IPerson
     {
+        public PersonModel()
+        {
+        }
+
+        public PersonModel(PersonModel person)
+        {
+            Id = person.Id;
+            FirstName = person.FirstName;
+            SecondName = person.SecondName;
+            DateOfBirth = person.DateOfBirth;
+            IdentityCard = person.IdentityCard;
+            AddressId = person.AddressId;
+            Address = new AddressModel(person.Address);
+            Phone = person.Phone;
+            Email = person.Email;
+            CreatedDate = person.CreatedDate;
+            Active = person.Active;
+            PhotoId = person.PhotoId;
+            if (person.Photo != null)
+                Photo = new PhotoModel(person.Photo);
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
@@ -18,8 +40,8 @@ namespace MSLAManagementSystem.ClientDataServices.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
-        public bool Active { get; set ; }
-        public int? PhotoId { get ; set ; }
+        public bool Active { get; set; }
+        public int? PhotoId { get; set; }
         public PhotoModel Photo { get; set; } = new PhotoModel();
     }
 }

@@ -59,10 +59,21 @@ namespace MSLAManagementSystem.Services.Services
 
         public  async Task Update(PersonEntity entity)
         {
-            //TODO need add logic to update
-            var entityToUpdate = await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(entity.Id);
+            var personToUpdate = await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>())
+                .GetByIdWithAddress(entity.Id);
 
-            entityToUpdate.FirstName = entity.FirstName;
+            personToUpdate.FirstName = entity.FirstName;
+            personToUpdate.SecondName = entity.SecondName;
+            personToUpdate.AddressId = entity.AddressId;
+            personToUpdate.DateOfBirth = entity.DateOfBirth;
+            personToUpdate.IdentityCard = entity.IdentityCard;
+            personToUpdate.Phone = entity.Phone;
+            personToUpdate.Email = entity.Email;
+            personToUpdate.Address.ShortAddress = entity.Address.ShortAddress;
+            personToUpdate.Address.Town = entity.Address.Town;
+            personToUpdate.Address.CityCode = entity.Address.CityCode;
+            personToUpdate.Address.Region = entity.Address.Region;
+            personToUpdate.Address.Country = entity.Address.Country;
 
             await unitOfWork.CommitAsync();
         }

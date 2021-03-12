@@ -8,6 +8,7 @@ using MSLAManagementSystem.ClientDataServices.Models;
 using MSLAManagementSystem.ClientDataServices.Interfaces;
 using System.Windows.Input;
 using System.Windows;
+using System.Linq;
 
 namespace MSLAManagementSystem.UI.ViewModels
 {
@@ -93,8 +94,8 @@ namespace MSLAManagementSystem.UI.ViewModels
         public bool IsEnableAddUser
         {
             get
-            { 
-                return IsEditMode == false; 
+            {
+                return IsEditMode == false;
             }
 
         }
@@ -141,7 +142,7 @@ namespace MSLAManagementSystem.UI.ViewModels
         {
             IsEditMode = true;
             CurrentDataOperation = Resource.EditPesonTitle;
-            PersonToEdit = SelectedPerson;
+            PersonToEdit = new PersonModel(SelectedPerson);
         }
 
         private void ExecuteCancelCommand(object obj)
@@ -149,16 +150,27 @@ namespace MSLAManagementSystem.UI.ViewModels
             IsEditMode = false;
         }
 
-        private async  void ExecuteSaveChangesCommand(object obj)
+        private async void ExecuteSaveChangesCommand(object obj)
         {
-            
             try
             {
-                var person = await personService.Create(PersonToEdit);
-                Persons.Add(person);
+                if (PersonToEdit.Id == 0)
+                {
+
+                    var person = await personService.Create(PersonToEdit);
+                    Persons.Add(person);
+                }
+                else
+                {
+                    var person = await personService.Update(PersonToEdit);
+                    Persons.ReplaceItem(item => item.Id == person.Id, person);
+
+                    SelectedPerson = Persons.FirstOrDefault(item => item.Id == person.Id);
+                }
+
                 IsEditMode = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

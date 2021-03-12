@@ -39,6 +39,28 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             }
         }
 
+        public async Task<PersonModel> Update(PersonModel personModel)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var personString = JsonConvert.SerializeObject(personModel);
+                var contentData = new StringContent(personString, System.Text.Encoding.UTF8, "application/json");
+                var reponse = await httpClient.PutAsync(settings.UrlPerson, contentData);
+                var result = reponse.IsSuccessStatusCode;
+
+                if (!result)
+                {
+                    var errorsStr = await reponse.Content.ReadAsStringAsync();
+
+                    throw new Exception($"Can't update person: \n {errorsStr}");
+                }
+
+                var resultStr = await reponse.Content.ReadAsStringAsync();
+                var updatedPerson = JsonConvert.DeserializeObject<PersonModel>(resultStr);
+                return updatedPerson;
+            }
+        }
+
         public async Task<IEnumerable<PersonModel>> GetAll()
         {
             var listPersons = new List<PersonModel>();
@@ -53,6 +75,5 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
 
             return listPersons;
         }
-
     }
 }

@@ -31,6 +31,11 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
                 .ToListAsync();
         }
 
-
+        public async Task<PersonEntity> GetByIdWithAddress(int id)
+        {
+            return await managementSystemDbContext.Persons
+                .Include(p => p.Address)
+                .FirstOrDefaultAsync(p => p.AddressId == id);
+        }
     }
 }

@@ -22,5 +22,17 @@ namespace MSLAManagementSystem.UI.Extensions
         {
             return new ObservableCollection<T>(col);
         }
+
+        public static void ReplaceItem<T>(this Collection<T> col, Func<T, bool> match, T newItem)
+        {
+            for (int i = 0; i <= col.Count - 1; i++)
+            {
+                if (match(col[i]))
+                {
+                    col[i] = newItem;
+                    break;
+                }
+            }
+        }
     }
 }

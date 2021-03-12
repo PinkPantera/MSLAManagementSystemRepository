@@ -28,7 +28,7 @@ namespace MSLAManagementSystem.API.Controllers
             return Ok(persons);
         }
 
-        [HttpPost()]
+        [HttpPost("")]
         public async Task<ActionResult<PersonEntity>> AddPerson(PersonEntity person)
         {
             var personValidation = new PersonValidation();
@@ -46,5 +46,32 @@ namespace MSLAManagementSystem.API.Controllers
             var newPerson = await personService.Create(person);
             return Ok(newPerson);
         }
+
+        [HttpPut("")]
+        public async Task<ActionResult<PersonEntity>> UpdatePerson(PersonEntity person)
+        {
+            var personValidation = new PersonValidation();
+            var resultPerson = await personValidation.ValidateAsync(person);
+            var addressValidation = new AddressValidation();
+
+            var resultAddress = await addressValidation.ValidateAsync(person.Address);
+
+            if (!resultPerson.IsValid || !resultAddress.IsValid)
+            {
+                var error = $"{resultPerson.ToString("\n")}\n{resultAddress.ToString("\n")}";
+                return BadRequest(error);
+            }
+
+            if (await personService.GetById(person.Id) == null)
+            {
+                return NotFound();
+            }
+
+            await personService.Update(person);
+            var updatedPerson = await personService.GetById(person.Id);
+
+            return Ok(updatedPerson);
+        }
+
     }
 }
