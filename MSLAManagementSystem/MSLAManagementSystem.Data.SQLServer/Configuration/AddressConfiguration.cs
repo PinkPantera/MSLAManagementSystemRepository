@@ -38,7 +38,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .HasMaxLength(40);
 
             builder
-                .Property(m => m.СityСode)
+                .Property(m => m.CityCode)
                 .IsRequired()
                 .HasMaxLength(10);
 

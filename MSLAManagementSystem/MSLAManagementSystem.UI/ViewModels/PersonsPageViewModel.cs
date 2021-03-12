@@ -7,6 +7,7 @@ using System.Text;
 using MSLAManagementSystem.ClientDataServices.Models;
 using MSLAManagementSystem.ClientDataServices.Interfaces;
 using System.Windows.Input;
+using System.Windows;
 
 namespace MSLAManagementSystem.UI.ViewModels
 {
@@ -150,10 +151,17 @@ namespace MSLAManagementSystem.UI.ViewModels
 
         private async  void ExecuteSaveChangesCommand(object obj)
         {
-            IsEditMode = false;
-
-           var person = await personService.Create(PersonToEdit);
-            Persons.Add(person);
+            
+            try
+            {
+                var person = await personService.Create(PersonToEdit);
+                Persons.Add(person);
+                IsEditMode = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
         #endregion Commands

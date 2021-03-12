@@ -28,8 +28,8 @@ namespace MSLAManagementSystem.Services.Services
                 await unitOfWork.CommitAsync();
             }
             catch (Exception ex)
-            { 
-
+            {
+                //TODO add logging 
             }
 
             return entity;

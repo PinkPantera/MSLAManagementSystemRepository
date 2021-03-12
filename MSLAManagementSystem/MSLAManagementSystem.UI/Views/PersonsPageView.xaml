@@ -58,8 +58,9 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
                     <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 20 0"
                                Text="{x:Static resx:Resource.DateOfBirthTitle}"/>
-                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="130" 
-                             Text="{Binding PersonToEdit.DateOfBirth}"/>
+                    <!--<TextBox Style="{StaticResource TextBoxEditMode}" Width="130" 
+                             Text="{Binding PersonToEdit.DateOfBirth}"/>-->
+                    <DatePicker SelectedDate="{Binding PersonToEdit.DateOfBirth}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
@@ -97,8 +98,8 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
                     <TextBlock Style="{StaticResource TextBlockTable}"  Margin="0 0 10 0"
                                Text="{x:Static resx:Resource.CityCodeTitle}"/>
-                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="60" 
-                               Text="{Binding PersonToEdit.Address.СityСode}"/>
+                    <TextBox Style="{StaticResource TextBoxEditMode}" Width="80" 
+                               Text="{Binding PersonToEdit.Address.CityCode}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">

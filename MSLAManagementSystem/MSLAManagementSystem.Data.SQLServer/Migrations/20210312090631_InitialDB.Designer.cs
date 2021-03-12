@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MSLAManagementSystem.Data.SQLServer.Migrations
 {
     [DbContext(typeof(ManagementSystemDbContext))]
-    [Migration("20210311193447_InitialDB")]
+    [Migration("20210312090631_InitialDB")]
     partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,11 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CityCode")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -53,11 +58,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("СityСode")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
 
@@ -177,7 +177,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("AddressId")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
@@ -295,9 +295,10 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
                 {
                     b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
-                        .WithMany("Persons")
+                        .WithMany()
                         .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MSLAManagementSystem.Core.Models.PhotoEntity", "Photo")
                         .WithMany()
@@ -306,11 +307,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Address");
 
                     b.Navigation("Photo");
-                });
-
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AddressEntity", b =>
-                {
-                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>

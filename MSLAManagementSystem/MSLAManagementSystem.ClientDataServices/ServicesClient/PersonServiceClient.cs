@@ -26,14 +26,16 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
                 var reponse = await httpClient.PostAsync(settings.UrlPerson, contentData);
                 var result = reponse.IsSuccessStatusCode;
 
-                if (result)
+                if (!result)
                 {
-                    var ppStr = await reponse.Content.ReadAsStringAsync();
-                    var pp = JsonConvert.DeserializeObject<PersonModel>(ppStr);
-                    return pp;
+                    var errorsStr = await reponse.Content.ReadAsStringAsync();
+
+                    throw new Exception($"Can't creat person: \n {errorsStr}");
                 }
 
-                throw new Exception(reponse.ReasonPhrase);
+                var resultStr = await reponse.Content.ReadAsStringAsync();
+                var createdPerson = JsonConvert.DeserializeObject<PersonModel>(resultStr);
+                return createdPerson;
             }
         }
 

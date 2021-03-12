@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MSLAManagementSystem.API.Validation;
 using MSLAManagementSystem.Core.Models;
 using MSLAManagementSystem.Core.Services;
 using System;
@@ -30,9 +31,20 @@ namespace MSLAManagementSystem.API.Controllers
         [HttpPost()]
         public async Task<ActionResult<PersonEntity>> AddPerson(PersonEntity person)
         {
+            var personValidation = new PersonValidation();
+            var resultPerson = await personValidation.ValidateAsync(person);
+            var addressValidation = new AddressValidation();
+
+            var resultAddress = await addressValidation.ValidateAsync(person.Address);
+
+            if (!resultPerson.IsValid || !resultAddress.IsValid)
+            {
+                var error = $"{resultPerson.ToString("\n")}\n{resultAddress.ToString("\n")}";
+                return BadRequest(error);
+            }
+
             var newPerson = await personService.Create(person);
             return Ok(newPerson);
         }
-
     }
 }

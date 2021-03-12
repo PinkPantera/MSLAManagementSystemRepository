@@ -11,6 +11,6 @@ namespace MSLAManagementSystem.Core.ModelsInterfaces
         string Town { get; set; }
         string Region { get; set; }
         string Country { get; set; }
-        string СityСode { get; set; }
+        string CityCode { get; set; }
     }
 }

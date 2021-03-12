@@ -10,13 +10,13 @@ namespace MSLAManagementSystem.ClientDataServices.Models
         public string Town { get; set; }
         public string Region { get; set; }
         public string Country { get; set; }
-        public string СityСode { get; set; }
+        public string CityCode { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
         public override string ToString()
         {
-                return $" {ShortAddress} \n {СityСode}, {Town} {Region} {Country}";
+                return $" {ShortAddress} \n {CityCode}, {Town} {Region} {Country}";
             }
         }
     }

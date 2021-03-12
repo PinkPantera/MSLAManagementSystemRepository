@@ -28,6 +28,11 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CityCode")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
                     b.Property<string>("Country")
                         .IsRequired()
                         .HasMaxLength(40)
@@ -51,11 +56,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("СityСode")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
 
@@ -175,7 +175,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("AddressId")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
@@ -293,9 +293,10 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
                 {
                     b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
-                        .WithMany("Persons")
+                        .WithMany()
                         .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MSLAManagementSystem.Core.Models.PhotoEntity", "Photo")
                         .WithMany()
@@ -304,11 +305,6 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Address");
 
                     b.Navigation("Photo");
-                });
-
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AddressEntity", b =>
-                {
-                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>

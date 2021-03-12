@@ -17,7 +17,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     Town = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Region = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Country = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
-                    СityСode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    CityCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()")
                 },
                 constraints: table =>
@@ -70,7 +70,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     SecondName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdentityCard = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressId = table.Column<int>(type: "int", nullable: true),
+                    AddressId = table.Column<int>(type: "int", nullable: false),
                     PhotoId = table.Column<int>(type: "int", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -85,7 +85,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                         column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Persons_Photos_PhotoId",
                         column: x => x.PhotoId,
