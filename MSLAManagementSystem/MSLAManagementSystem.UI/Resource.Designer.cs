@@ -160,6 +160,15 @@ namespace MSLAManagementSystem.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete photo.
+        /// </summary>
+        public static string DeletePhotoTitle {
+            get {
+                return ResourceManager.GetString("DeletePhotoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Person.
         /// </summary>
         public static string EditPesonTitle {
@@ -201,6 +210,15 @@ namespace MSLAManagementSystem.UI {
         public static string IdentityCardTitle {
             get {
                 return ResourceManager.GetString("IdentityCardTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load photo.
+        /// </summary>
+        public static string LoadPhotoTitle {
+            get {
+                return ResourceManager.GetString("LoadPhotoTitle", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace MSLAManagementSystem.UI {
         public static string SecondNameTitle {
             get {
                 return ResourceManager.GetString("SecondNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a picture.
+        /// </summary>
+        public static string SelectPictureDialog {
+            get {
+                return ResourceManager.GetString("SelectPictureDialog", resourceCulture);
             }
         }
         

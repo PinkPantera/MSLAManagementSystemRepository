@@ -144,6 +144,9 @@
   <data name="DeletePesonTitle" xml:space="preserve">
     <value>Удалить информацию о человеке</value>
   </data>
+  <data name="DeletePhotoTitle" xml:space="preserve">
+    <value>Удалить фографию</value>
+  </data>
   <data name="EditPesonTitle" xml:space="preserve">
     <value>Редактировать информацию о человеке</value>
   </data>
@@ -156,6 +159,9 @@
   <data name="IdentityCardTitle" xml:space="preserve">
     <value>Удостоверение личности</value>
   </data>
+  <data name="LoadPhotoTitle" xml:space="preserve">
+    <value>Загрузить фотографию</value>
+  </data>
   <data name="NotSignedIn" xml:space="preserve">
     <value>нет входа в систему</value>
   </data>
@@ -167,6 +173,9 @@
   </data>
   <data name="PlanningPageTitle" xml:space="preserve">
     <value>Планирование</value>
+  </data>
+  <data name="SelectPictureDialog" xml:space="preserve">
+    <value>Выберите фотографию</value>
   </data>
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Настройки</value>

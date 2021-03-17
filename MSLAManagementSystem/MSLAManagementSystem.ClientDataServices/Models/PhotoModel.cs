@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace MSLAManagementSystem.ClientDataServices.Models
 {
-    public class PhotoModel : IPhoto
+    public class PhotoModel : IPhoto, INotifyPropertyChanged
     {
+        private byte[] image;
+
         public PhotoModel()
         { }
 
@@ -19,8 +22,26 @@ namespace MSLAManagementSystem.ClientDataServices.Models
             CreatedDate = photoModel.CreatedDate;
         }
 
-        public byte[] ImageData { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public DateTime CreatedDate { get ; set ; }
 
+        public byte[] ImageData
+        {
+            get
+            {
+                return image;
+            }
+            set
+            {
+                image = value;
+                OnPropertyChanged(nameof (ImageData));
+            }
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

@@ -9,6 +9,8 @@ using MSLAManagementSystem.ClientDataServices.Interfaces;
 using System.Windows.Input;
 using System.Windows;
 using System.Linq;
+using Microsoft.Win32;
+using System.IO;
 
 namespace MSLAManagementSystem.UI.ViewModels
 {
@@ -28,18 +30,23 @@ namespace MSLAManagementSystem.UI.ViewModels
             SaveChangesCommand = new RelayCommand<object>(ExecuteSaveChangesCommand);
             CancelCommand = new RelayCommand<object>(ExecuteCancelCommand);
             EditPersonCommand = new RelayCommand<object>(ExecuteEditPersonCommand);
-            IsEditMode = false;
+            LoadPhotoCommand = new RelayCommand<object>(ExecuteLoadPhotoCommand);
+            DeletePhotoCommand = new RelayCommand<object>(ExecuteDeletePhotoCommand); 
+             IsEditMode = false;
         }
 
         public ICommand NewPersonCommand { get; }
         public ICommand SaveChangesCommand { get; }
         public ICommand CancelCommand { get; }
         public ICommand EditPersonCommand { get; }
+        public ICommand LoadPhotoCommand { get; }
+        public ICommand DeletePhotoCommand { get; }
         public ObservableCollection<PersonModel> Persons { get; private set; } = new ObservableCollection<PersonModel>();
 
         public PageKind PageKind => PageKind.Persons;
 
         public string Caption => Resource.PersonsPageTitle;
+
         public string CurrentDataOperation
         {
             get { return currentDataOperation; }
@@ -175,6 +182,30 @@ namespace MSLAManagementSystem.UI.ViewModels
                 MessageBox.Show(ex.Message);
             }
 
+        }
+        private void ExecuteLoadPhotoCommand(object obj)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = Resource.SelectPictureDialog;
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                var imageInBytes = File.ReadAllBytes(op.FileName);
+
+                if (PersonToEdit.Photo == null)
+                {
+                    PersonToEdit.Photo = new PhotoModel();
+                }
+
+                PersonToEdit.Photo.ImageData = imageInBytes;
+            }
+
+        }
+        private void ExecuteDeletePhotoCommand(object obj)
+        {
+            PersonToEdit.Photo.ImageData = null;
         }
         #endregion Commands
     }

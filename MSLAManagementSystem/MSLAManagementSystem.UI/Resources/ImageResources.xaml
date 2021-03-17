@@ -27,6 +27,11 @@
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/delete-person.png"/>
     <BitmapImage x:Key="PersonDefaultImage" 
                  UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/person.png"/>
-
+    <BitmapImage x:Key="GarbageIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/garbage.png"/>
+    <BitmapImage x:Key="AddPhotoIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/add-photo.png"/>
+    <BitmapImage x:Key="EraserIcon" 
+                 UriSource="pack://application:,,,/MSLAManagementSystem.UI;component/Resources/Images/eraser.png"/>
 
 </ResourceDictionary>

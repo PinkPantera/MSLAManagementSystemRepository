@@ -60,7 +60,7 @@ namespace MSLAManagementSystem.Services.Services
         public  async Task Update(PersonEntity entity)
         {
             var personToUpdate = await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>())
-                .GetByIdWithAddress(entity.Id);
+                .GetByIdWithAddressAsync(entity.Id);
 
             personToUpdate.FirstName = entity.FirstName;
             personToUpdate.SecondName = entity.SecondName;
@@ -74,6 +74,12 @@ namespace MSLAManagementSystem.Services.Services
             personToUpdate.Address.CityCode = entity.Address.CityCode;
             personToUpdate.Address.Region = entity.Address.Region;
             personToUpdate.Address.Country = entity.Address.Country;
+            if (personToUpdate.Photo==null)
+            {
+                personToUpdate.Photo = new PhotoEntity();
+            }
+
+            personToUpdate.Photo.ImageData = entity.Photo.ImageData;
 
             await unitOfWork.CommitAsync();
         }

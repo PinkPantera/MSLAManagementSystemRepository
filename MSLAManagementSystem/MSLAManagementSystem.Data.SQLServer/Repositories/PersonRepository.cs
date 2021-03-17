@@ -28,13 +28,15 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
         {
             return await managementSystemDbContext.Persons
                 .Include(p => p.Address)
+                .Include(p=>p.Photo)
                 .ToListAsync();
         }
 
-        public async Task<PersonEntity> GetByIdWithAddress(int id)
+        public async Task<PersonEntity> GetByIdWithAddressAsync(int id)
         {
             return await managementSystemDbContext.Persons
                 .Include(p => p.Address)
+                .Include(p => p.Photo)
                 .FirstOrDefaultAsync(p => p.AddressId == id);
         }
     }

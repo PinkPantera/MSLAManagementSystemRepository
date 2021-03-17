@@ -144,6 +144,9 @@
   <data name="DeletePersonTitle" xml:space="preserve">
     <value>Supprimer la personne</value>
   </data>
+  <data name="DeletePhotoTitle" xml:space="preserve">
+    <value>Supprimer la photo</value>
+  </data>
   <data name="EditPesonTitle" xml:space="preserve">
     <value>Modifier la personne</value>
   </data>
@@ -156,6 +159,9 @@
   <data name="IdentityCardTitle" xml:space="preserve">
     <value>Carte d'identité</value>
   </data>
+  <data name="LoadPhotoTitle" xml:space="preserve">
+    <value>Charger la photo</value>
+  </data>
   <data name="NotSignedIn" xml:space="preserve">
     <value>pas connecté</value>
   </data>
@@ -167,6 +173,9 @@
   </data>
   <data name="PlanningPageTitle" xml:space="preserve">
     <value>Planification</value>
+  </data>
+  <data name="SelectPictureDialog" xml:space="preserve">
+    <value>Sélectionnez une image</value>
   </data>
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>Options</value>
