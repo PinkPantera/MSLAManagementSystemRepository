@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MSLAManagementSystem.ClientDataServices.Extensions;
 
 namespace MSLAManagementSystem.ClientDataServices.ServicesClient
 {
@@ -17,7 +18,7 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             this.settings = settings;
         }
 
-        public async Task<PersonModel> Create(PersonModel personModel)
+        public async Task<PersonModel> CreateAsync(PersonModel personModel)
         {
             using (var httpClient = new HttpClient())
             {
@@ -39,7 +40,7 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             }
         }
 
-        public async Task<PersonModel> Update(PersonModel personModel)
+        public async Task<PersonModel> UpdateAsync(PersonModel personModel)
         {
             using (var httpClient = new HttpClient())
             {
@@ -61,7 +62,7 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             }
         }
 
-        public async Task<IEnumerable<PersonModel>> GetAll()
+        public async Task<IEnumerable<PersonModel>> GetAllAsync()
         {
             var listPersons = new List<PersonModel>();
             using (var httpClient = new HttpClient())
@@ -74,6 +75,20 @@ namespace MSLAManagementSystem.ClientDataServices.ServicesClient
             }
 
             return listPersons;
+        }
+
+        public async Task DeleteAsync(PersonModel personModel)
+        {
+            using (var httpClient = new HttpClient())
+            {
+               
+
+
+                //var personString = JsonConvert.SerializeObject(personModel);
+                //// var contentData = new StringContent(personModel.Id, System.Text.Encoding.UTF8, "application/json");
+                //var txt = settings.UrlPerson + "/" + personModel.Id;
+                await httpClient.DeleteByIdAsync(settings.UrlPerson, personModel.Id);
+            }
         }
     }
 }

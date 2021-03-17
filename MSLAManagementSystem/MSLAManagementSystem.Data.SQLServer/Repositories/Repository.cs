@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MSLAManagementSystem.Data.SQLServer.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public  class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext context;
 

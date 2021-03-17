@@ -17,7 +17,7 @@ namespace MSLAManagementSystem.Services.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task<AddressEntity> Create(AddressEntity entity)
+        public async Task<AddressEntity> CreateAsync(AddressEntity entity)
         {
             await unitOfWork.GetRepository<AddressEntity>().AddAsync(entity);
             await unitOfWork.CommitAsync();
@@ -25,23 +25,23 @@ namespace MSLAManagementSystem.Services.Services
             return entity;
         }
 
-        public  async Task Delete(AddressEntity entity)
+        public  async Task DeleteAsync(AddressEntity entity)
         {
             unitOfWork.GetRepository<AddressEntity>().Remove(entity);
             await unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<AddressEntity>> GetAll()
+        public async Task<IEnumerable<AddressEntity>> GetAllAsync()
         {
             return await unitOfWork.GetRepository<AddressEntity>().GetAllAsync();
         }
 
-        public async Task<AddressEntity> GetById(int id)
+        public async Task<AddressEntity> GetByIdAsync(int id)
         {
             return await unitOfWork.GetRepository<AddressEntity>().GetByIdAsync(id);
         }
 
-        public  async Task Update(AddressEntity entity)
+        public  async Task UpdateAsync(AddressEntity entity)
         {
             var entitytoUpdate = await unitOfWork.GetRepository<AddressEntity>().GetByIdAsync(entity.Id);
             entitytoUpdate.ShortAddress= entity.ShortAddress;

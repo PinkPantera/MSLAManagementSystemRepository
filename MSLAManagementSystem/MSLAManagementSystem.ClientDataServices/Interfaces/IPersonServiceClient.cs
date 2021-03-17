@@ -8,8 +8,9 @@ namespace MSLAManagementSystem.ClientDataServices.Interfaces
 {
     public interface IPersonServiceClient
     {
-        Task<IEnumerable<PersonModel>> GetAll();
-        Task<PersonModel> Update(PersonModel personModel);
-        Task<PersonModel> Create(PersonModel personModel);
+        Task<IEnumerable<PersonModel>> GetAllAsync();
+        Task<PersonModel> UpdateAsync(PersonModel personModel);
+        Task<PersonModel> CreateAsync(PersonModel personModel);
+        Task DeleteAsync(PersonModel personModel);
     }
 }

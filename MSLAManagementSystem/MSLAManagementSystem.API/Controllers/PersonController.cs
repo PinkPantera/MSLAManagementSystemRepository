@@ -43,7 +43,7 @@ namespace MSLAManagementSystem.API.Controllers
                 return BadRequest(error);
             }
 
-            var newPerson = await personService.Create(person);
+            var newPerson = await personService.CreateAsync(person);
             return Ok(newPerson);
         }
 
@@ -62,15 +62,29 @@ namespace MSLAManagementSystem.API.Controllers
                 return BadRequest(error);
             }
 
-            if (await personService.GetById(person.Id) == null)
+            if (await personService.GetByIdAsync(person.Id) == null)
             {
                 return NotFound();
             }
 
-            await personService.Update(person);
-            var updatedPerson = await personService.GetById(person.Id);
+            await personService.UpdateAsync(person);
+            var updatedPerson = await personService.GetByIdAsync(person.Id);
 
             return Ok(updatedPerson);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeletePerson(int id)
+        {
+            var personToDesactivate = await personService.GetByIdAsync(id);
+
+            if (personToDesactivate== null)
+            {
+                return BadRequest("Person does not exist");  
+            }
+
+            await personService.DeactivatePerson(id);
+            return NoContent();
         }
 
     }

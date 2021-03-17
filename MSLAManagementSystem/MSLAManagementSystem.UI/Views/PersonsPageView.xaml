@@ -189,7 +189,7 @@
                                            IconSource="{DynamicResource DeletePersonIcon}"  IconHeight="25"
                                            TextVisibility="Collapsed"
                                            ToolTip="{x:Static resx:Resource.DeletePersonTitle}"
-                                           Command="{Binding NewPersonCommand}"
+                                           Command="{Binding DeletePersonCommand}"
                                            IsEnabled="{Binding IsEnableEditUser}"/>
         </StackPanel>
 

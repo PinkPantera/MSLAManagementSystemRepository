@@ -19,7 +19,7 @@ namespace MSLAManagementSystem.Services.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task<PersonEntity> Create(PersonEntity entity)
+        public async Task<PersonEntity> CreateAsync(PersonEntity entity)
         {
             try
             {
@@ -35,18 +35,18 @@ namespace MSLAManagementSystem.Services.Services
             return entity;
         }
 
-        public async Task Delete(PersonEntity entity)
+        public async Task DeleteAsync(PersonEntity entity)
         {
             unitOfWork.GetRepository<PersonEntity>().Remove(entity);
             await unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<PersonEntity>> GetAll()
+        public async Task<IEnumerable<PersonEntity>> GetAllAsync()
         {
             return await unitOfWork.GetRepository<PersonEntity>().GetAllAsync();
         }
 
-        public async Task<PersonEntity> GetById(int id)
+        public async Task<PersonEntity> GetByIdAsync(int id)
         {
             return await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(id);
         }
@@ -54,13 +54,13 @@ namespace MSLAManagementSystem.Services.Services
         public async Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync()
         {
           return await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>())
-                .GetAllWithAddressAsync();
+                .GetAllActiveWithAddressAsync();
         }
 
-        public  async Task Update(PersonEntity entity)
+        public  async Task UpdateAsync(PersonEntity entity)
         {
             var personToUpdate = await ((IPersonRepository)unitOfWork.GetRepository<PersonEntity>())
-                .GetByIdWithAddressAsync(entity.Id);
+                .GetByIdActiveWithAddressAsync(entity.Id);
 
             personToUpdate.FirstName = entity.FirstName;
             personToUpdate.SecondName = entity.SecondName;
@@ -80,6 +80,14 @@ namespace MSLAManagementSystem.Services.Services
             }
 
             personToUpdate.Photo.ImageData = entity.Photo.ImageData;
+
+           var result =  await unitOfWork.CommitAsync();
+        }
+
+        public async Task DeactivatePerson(int id)
+        {
+            var personToUpdate = await unitOfWork.GetRepository<PersonEntity>().GetByIdAsync(id);
+            personToUpdate.Active = false;
 
             await unitOfWork.CommitAsync();
         }

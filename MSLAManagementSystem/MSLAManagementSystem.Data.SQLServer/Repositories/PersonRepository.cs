@@ -4,6 +4,7 @@ using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,25 +20,28 @@ namespace MSLAManagementSystem.Data.SQLServer.Repositories
         }
 
         public PersonRepository(ManagementSystemDbContext context)
-            :base(context)
+            : base(context)
         {
 
         }
 
-        public async Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync()
+        public async Task<IEnumerable<PersonEntity>> GetAllActiveWithAddressAsync()
         {
             return await managementSystemDbContext.Persons
+                .Where(p => p.Active)
                 .Include(p => p.Address)
-                .Include(p=>p.Photo)
+                .Include(p => p.Photo)
                 .ToListAsync();
         }
 
-        public async Task<PersonEntity> GetByIdWithAddressAsync(int id)
+        public async Task<PersonEntity> GetByIdActiveWithAddressAsync(int id)
         {
             return await managementSystemDbContext.Persons
+                .Where(p => p.Active)
                 .Include(p => p.Address)
                 .Include(p => p.Photo)
                 .FirstOrDefaultAsync(p => p.AddressId == id);
         }
+
     }
 }

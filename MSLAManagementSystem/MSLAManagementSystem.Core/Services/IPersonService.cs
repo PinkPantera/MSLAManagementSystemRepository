@@ -13,5 +13,6 @@ namespace MSLAManagementSystem.Core.Services
         //needs to define the operations which our projet are required
 
         Task<IEnumerable<PersonEntity>> GetAllWithAddressAsync();
+        Task DeactivatePerson(int id);
     }
 }

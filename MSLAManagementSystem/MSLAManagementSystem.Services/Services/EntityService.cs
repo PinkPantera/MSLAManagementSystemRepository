@@ -17,7 +17,7 @@ namespace MSLAManagementSystem.Services.Services
             this.unitOfWork = unitOFWork;
         }
 
-        public async Task<TEntity> Create(TEntity entity)
+        public async Task<TEntity> CreateAsync(TEntity entity)
         {
             await unitOfWork.GetRepository<TEntity>().AddAsync(entity);
             await unitOfWork.CommitAsync();
@@ -25,22 +25,22 @@ namespace MSLAManagementSystem.Services.Services
             return entity;
         }
 
-        public async Task Delete(TEntity entity)
+        public async Task DeleteAsync(TEntity entity)
         {
             unitOfWork.GetRepository<TEntity>().Remove(entity);
             await unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await unitOfWork.GetRepository<TEntity>().GetAllAsync();
         }
 
-        public async Task<TEntity> GetById(int id)
+        public async Task<TEntity> GetByIdAsync(int id)
         {
             return await unitOfWork.GetRepository<TEntity>().GetByIdAsync(id);
         }
 
-        public abstract Task Update(TEntity entity);
+        public abstract Task UpdateAsync(TEntity entity);
     }
 }

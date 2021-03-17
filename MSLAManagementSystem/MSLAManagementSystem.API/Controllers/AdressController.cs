@@ -23,7 +23,7 @@ namespace MSLAManagementSystem.API.Controllers
         [HttpGet("")]
         public async Task<ActionResult<IEnumerable<AddressEntity>>> GetAllAddresses()
         {
-            var persons = await addressService.GetAll();
+            var persons = await addressService.GetAllAsync();
             return Ok(persons);
         }
     }

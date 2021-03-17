@@ -31,8 +31,9 @@ namespace MSLAManagementSystem.UI.ViewModels
             CancelCommand = new RelayCommand<object>(ExecuteCancelCommand);
             EditPersonCommand = new RelayCommand<object>(ExecuteEditPersonCommand);
             LoadPhotoCommand = new RelayCommand<object>(ExecuteLoadPhotoCommand);
-            DeletePhotoCommand = new RelayCommand<object>(ExecuteDeletePhotoCommand); 
-             IsEditMode = false;
+            DeletePhotoCommand = new RelayCommand<object>(ExecuteDeletePhotoCommand);
+            DeletePersonCommand = new RelayCommand<object>(ExecuteDeletePersonCommand);
+            IsEditMode = false;
         }
 
         public ICommand NewPersonCommand { get; }
@@ -41,6 +42,7 @@ namespace MSLAManagementSystem.UI.ViewModels
         public ICommand EditPersonCommand { get; }
         public ICommand LoadPhotoCommand { get; }
         public ICommand DeletePhotoCommand { get; }
+        public ICommand DeletePersonCommand { get; }
         public ObservableCollection<PersonModel> Persons { get; private set; } = new ObservableCollection<PersonModel>();
 
         public PageKind PageKind => PageKind.Persons;
@@ -123,7 +125,7 @@ namespace MSLAManagementSystem.UI.ViewModels
         public async void Refreshe()
         {
             LoadingInProgress = true;
-            var list = await personService.GetAll();
+            var list = await personService.GetAllAsync();
 
             Persons.Clear();
 
@@ -164,12 +166,12 @@ namespace MSLAManagementSystem.UI.ViewModels
                 if (PersonToEdit.Id == 0)
                 {
 
-                    var person = await personService.Create(PersonToEdit);
+                    var person = await personService.CreateAsync(PersonToEdit);
                     Persons.Add(person);
                 }
                 else
                 {
-                    var person = await personService.Update(PersonToEdit);
+                    var person = await personService.UpdateAsync(PersonToEdit);
                     Persons.ReplaceItem(item => item.Id == person.Id, person);
 
                     SelectedPerson = Persons.FirstOrDefault(item => item.Id == person.Id);
@@ -183,6 +185,7 @@ namespace MSLAManagementSystem.UI.ViewModels
             }
 
         }
+
         private void ExecuteLoadPhotoCommand(object obj)
         {
             OpenFileDialog op = new OpenFileDialog();
@@ -203,9 +206,25 @@ namespace MSLAManagementSystem.UI.ViewModels
             }
 
         }
+
         private void ExecuteDeletePhotoCommand(object obj)
         {
             PersonToEdit.Photo.ImageData = null;
+        }
+
+        private async void ExecuteDeletePersonCommand(object obj)
+        {
+            var messageText = $"You confirm the deletion {SelectedPerson.FirstName} {SelectedPerson.SecondName}";
+            var confirmationResult = MessageBox.Show(messageText, "Delete confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (confirmationResult == MessageBoxResult.Yes)
+            {
+                SelectedPerson.Active = false;
+                await personService.DeleteAsync(SelectedPerson);
+                
+                Persons.Remove(SelectedPerson);
+
+                SelectedPerson = Persons.FirstOrDefault();
+            }
         }
         #endregion Commands
     }
