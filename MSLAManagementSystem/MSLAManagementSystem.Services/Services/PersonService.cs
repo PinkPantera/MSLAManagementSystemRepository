@@ -23,6 +23,7 @@ namespace MSLAManagementSystem.Services.Services
         {
             try
             {
+                entity.Active = true;
                 await unitOfWork.GetRepository<PersonEntity>().AddAsync(entity);
 
                 await unitOfWork.CommitAsync();
