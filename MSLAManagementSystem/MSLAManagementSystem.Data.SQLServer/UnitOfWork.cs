@@ -1,5 +1,5 @@
 ﻿using MSLAManagementSystem.Core;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Data.SQLServer.Repositories;
@@ -43,7 +43,7 @@ namespace MSLAManagementSystem.Data.SQLServer
 
             if (!repositories.ContainsKey(type))
             {
-                IRepository<TEntity> repository = null;
+                IRepository<TEntity> repository;
                 if (type == typeof(PersonEntity))
                 {
                     var tmp = new PersonRepository(context);

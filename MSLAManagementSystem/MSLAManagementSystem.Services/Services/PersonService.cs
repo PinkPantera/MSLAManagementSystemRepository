@@ -1,5 +1,5 @@
 ﻿using MSLAManagementSystem.Core;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Core.Services;

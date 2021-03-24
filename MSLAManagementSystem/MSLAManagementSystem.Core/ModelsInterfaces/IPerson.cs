@@ -6,7 +6,6 @@ namespace MSLAManagementSystem.Core.ModelsInterfaces
 {
     public interface IPerson : IBasicModel
     {
-        int Id { get; set; }
         string FirstName { get; set; }
         string SecondName { get; set; }
         DateTime DateOfBirth { get; set; }

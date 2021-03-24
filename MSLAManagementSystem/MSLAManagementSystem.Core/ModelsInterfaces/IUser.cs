@@ -9,8 +9,5 @@ namespace MSLAManagementSystem.Core.ModelsInterfaces
         string FirstName { get; set; }
         string LastNAme { get; set; }
         string UserName { get; set; }
-        byte[] PasswordHash { get; set; }
-        byte[] PasswordSalt { get; set; }
-
     }
 }

@@ -6,6 +6,7 @@ namespace MSLAManagementSystem.Core.ModelsInterfaces
 {
     public interface IBasicModel
     {
-        public DateTime CreatedDate { get; set; }
+        int Id { get; set; }
+        DateTime CreatedDate { get; set; }
     }
 }

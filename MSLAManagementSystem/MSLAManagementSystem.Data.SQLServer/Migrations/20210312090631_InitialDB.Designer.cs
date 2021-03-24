@@ -21,7 +21,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AddressEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.AddressEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AttendanceLogEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.AttendanceLogEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,7 +102,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("AttendanceLogs");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.BuildingEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.BuildingEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,7 +136,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("Buildings");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.ControlPostEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -165,7 +165,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("ControlPosts");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.PersonEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +223,7 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.PhotoEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.PhotoEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -245,14 +245,14 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.ToTable("Photos");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.AttendanceLogEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.AttendanceLogEntity", b =>
                 {
-                    b.HasOne("MSLAManagementSystem.Core.Models.ControlPostEntity", "ControlPost")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.ControlPostEntity", "ControlPost")
                         .WithMany("AttendanceLogs")
                         .HasForeignKey("ControlPostId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MSLAManagementSystem.Core.Models.PersonEntity", "Person")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.PersonEntity", "Person")
                         .WithMany("AttendanceLogs")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -263,15 +263,15 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.BuildingEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.BuildingEntity", b =>
                 {
-                    b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.AddressEntity", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MSLAManagementSystem.Core.Models.ControlPostEntity", "ControlPost")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.ControlPostEntity", "ControlPost")
                         .WithMany("Buildings")
                         .HasForeignKey("ControlPostId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -281,9 +281,9 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("ControlPost");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.ControlPostEntity", b =>
                 {
-                    b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.AddressEntity", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -292,15 +292,15 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.PersonEntity", b =>
                 {
-                    b.HasOne("MSLAManagementSystem.Core.Models.AddressEntity", "Address")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.AddressEntity", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MSLAManagementSystem.Core.Models.PhotoEntity", "Photo")
+                    b.HasOne("MSLAManagementSystem.Core.Entities.PhotoEntity", "Photo")
                         .WithMany()
                         .HasForeignKey("PhotoId");
 
@@ -309,14 +309,14 @@ namespace MSLAManagementSystem.Data.SQLServer.Migrations
                     b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.ControlPostEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.ControlPostEntity", b =>
                 {
                     b.Navigation("AttendanceLogs");
 
                     b.Navigation("Buildings");
                 });
 
-            modelBuilder.Entity("MSLAManagementSystem.Core.Models.PersonEntity", b =>
+            modelBuilder.Entity("MSLAManagementSystem.Core.Entities.PersonEntity", b =>
                 {
                     b.Navigation("AttendanceLogs");
                 });

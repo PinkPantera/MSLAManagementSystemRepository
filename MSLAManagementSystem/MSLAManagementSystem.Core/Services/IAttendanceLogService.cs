@@ -1,4 +1,4 @@
-﻿using MSLAManagementSystem.Core.Models;
+﻿using MSLAManagementSystem.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

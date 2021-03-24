@@ -39,6 +39,8 @@ namespace MSLAManagementSystem.ClientDataServices.Models
             }
         }
 
+        public int Id { get; set ; }
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

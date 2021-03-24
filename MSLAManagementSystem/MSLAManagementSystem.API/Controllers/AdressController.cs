@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.Services;
 using System;
 using System.Collections.Generic;

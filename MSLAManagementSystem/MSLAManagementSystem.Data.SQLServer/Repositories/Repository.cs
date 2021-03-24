@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.Repository;
 using System;
 using System.Collections.Generic;

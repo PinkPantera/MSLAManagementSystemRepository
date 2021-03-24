@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MSLAManagementSystem.Core.Models
+namespace MSLAManagementSystem.Core.Entities
 {
     public class AttendanceLogEntity : BasicEntity
     {

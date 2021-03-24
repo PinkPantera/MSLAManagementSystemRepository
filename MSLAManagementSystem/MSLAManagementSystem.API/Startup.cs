@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MSLAManagementSystem.Core;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.Repository;
 using MSLAManagementSystem.Core.Services;
 using MSLAManagementSystem.Data.SQLServer;

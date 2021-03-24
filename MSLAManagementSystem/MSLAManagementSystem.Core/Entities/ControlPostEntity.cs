@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace MSLAManagementSystem.Core.Models
+namespace MSLAManagementSystem.Core.Entities
 {
     public class ControlPostEntity: BasicEntity
     {

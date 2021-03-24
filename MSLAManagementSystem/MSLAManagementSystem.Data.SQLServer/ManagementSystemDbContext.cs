@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Data.SQLServer.Configuration;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,7 @@ namespace MSLAManagementSystem.Data.SQLServer
         public DbSet<ControlPostEntity> ControlPosts { get; set; }
         public DbSet<AttendanceLogEntity> AttendanceLogs { get; set; }
         public DbSet<PhotoEntity> Photos { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
 
         public ManagementSystemDbContext(DbContextOptions<ManagementSystemDbContext> options)
             :base (options)
@@ -30,6 +31,7 @@ namespace MSLAManagementSystem.Data.SQLServer
             builder.ApplyConfiguration(new ControlPostConfiguration());
             builder.ApplyConfiguration(new AttendanceLogConfiguration());
             builder.ApplyConfiguration(new PhotoConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
         }
     }
 }

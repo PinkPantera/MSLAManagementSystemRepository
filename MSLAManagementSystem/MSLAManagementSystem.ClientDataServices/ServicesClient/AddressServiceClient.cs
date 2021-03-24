@@ -1,6 +1,6 @@
 ﻿using MSLAManagementSystem.ClientDataServices.Interfaces;
 using MSLAManagementSystem.ClientDataServices.Models;
-using MSLAManagementSystem.Core.Models;
+using MSLAManagementSystem.Core.Entities;
 using MSLAManagementSystem.Core.ModelsInterfaces;
 using MSLAManagementSystem.Core.Services;
 using Newtonsoft.Json;

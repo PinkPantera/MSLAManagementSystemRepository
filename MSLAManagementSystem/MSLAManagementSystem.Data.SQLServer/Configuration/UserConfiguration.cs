@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MSLAManagementSystem.Data.SQLServer.Configuration
 {
-    public class PersonConfiguration : IEntityTypeConfiguration<PersonEntity>
+    public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
     {
-        public void Configure(EntityTypeBuilder<PersonEntity> builder)
+        public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
             builder.HasKey(m => m.Id);
 
@@ -23,34 +23,34 @@ namespace MSLAManagementSystem.Data.SQLServer.Configuration
                 .HasMaxLength(50);
 
             builder
-               .Property(m => m.SecondName)
-               .IsRequired()
-               .HasMaxLength(50);
-
-            builder
-                .Property(m => m.DateOfBirth)
-                .IsRequired();
-           
-            builder
-                .Property(m => m.Email)
+                .Property(m => m.LastNAme)
                 .IsRequired()
                 .HasMaxLength(50);
 
             builder
-                .Property(m => m.Phone)
+                .Property(m => m.LastNAme)
                 .IsRequired()
-                .HasMaxLength(20);
+                .HasMaxLength(50);
 
             builder
-                .Property(m => m.CreatedDate)
-                .HasDefaultValueSql("GETDATE()");
+                .Property(m => m.UserName)
+                .IsRequired()
+                .HasMaxLength(50);
 
             builder
-                .Property(m => m.Active)
+                .Property(m => m.PasswordHash)
                 .IsRequired();
 
             builder
-                .ToTable("Persons");
+                .Property(m => m.PasswordKey)
+                .IsRequired();
+
+            builder
+              .Property(m => m.CreatedDate)
+              .HasDefaultValueSql("GETDATE()");
+
+            builder
+                .ToTable("Users");
         }
     }
 }
